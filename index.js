@@ -91,20 +91,18 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	console.log("userinput", userInput)
 	console.log("trackingData", trackingData)
 	if (userInput == 'Customer') {
-		"Buttons": [
-		{
-			"Columns": 6,
-			"Rows": 1,
-			"BgColor": "#000000",
-			"Text": "<font color='#ffffff'>Contact</font>",
-			"InputFieldState": "hidden",
-			"TextHAlign": "center",
-			"TextVAlign": "middle",
-			"ActionType": "reply",
-			"TextSize": "large",
-			"ActionBody": "Customer"
-		}
-		]
+		    let button = {
+            "Columns": 6,
+            "Rows": 1,
+            "BgColor": "#4b3695",
+            "Text": "<font color='#FFFFFF'>Contact Us</font>",
+            "InputFieldState": "hidden",
+            "TextHAlign": "center",
+            "TextVAlign": "middle",
+            "ActionType": "reply",
+            "TextSize": "large",
+            "ActionBody": "Contact"
+        }
 		bot.sendMessage(userprofile[0],[
 			new TextMessage('These are the Hyperbeast Themed products!'),
 			new RichMediaMessage({
