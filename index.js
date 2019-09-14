@@ -220,7 +220,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"Columns":6,
 				"Rows":3,
 				"ActionType":"none",            
-				"Image":"https://steamuserimages-a.akamaihd.net/ugc/708527825002071756/D0DC2B2A733A820E5FBD83D6187E3A26BEE57137/"
+				"Image":data.image
 				}
 		let plbutton2 = {
 				"Columns":6,
@@ -241,7 +241,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
-	if (userInput == 'Start Location') {
+	if (userInput == 'currentloca') {
 		    let elbutton = {
             "Columns": 6,
             "Rows": 1,
