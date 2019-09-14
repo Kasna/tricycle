@@ -42,7 +42,7 @@ const minApiVersion = 7;
 
 const userprofile = []
 // Perfect! Now here's the key part:
-bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish, startpoint) => {
+bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish , pstart) => {
 	const uPF = userProfile.userProfile
   console.log(uPF);
 	userprofile.push(uPF);
@@ -241,7 +241,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
-	if (startpoint.LocationMessage) {
+	if (userInput == 'StartLocation') {
 		    let elbutton = {
             "Columns": 6,
             "Rows": 1,
