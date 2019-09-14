@@ -118,8 +118,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"TextVAlign":"middle",
 				"TextHAlign":"center"
 				}]
-			})
-			/*(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))]*/,["Selet Service Type"])
+			})],["Selet Service Type"])
 	}
 });
 
