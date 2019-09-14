@@ -117,7 +117,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"TextSize":"medium",
 				"TextVAlign":"middle",
 				"TextHAlign":"center"
-				}
+				}]
 			}),
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Selet Service Type"])
 	}
