@@ -42,7 +42,7 @@ const minApiVersion = 7;
 
 const userprofile = []
 // Perfect! Now here's the key part:
-bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish , pstrat) => {
+bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish ) => {
 	const uPF = userProfile.userProfile
   console.log(uPF);
 	userprofile.push(uPF);
@@ -83,15 +83,22 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 });
 
 
-bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
+bot.on(BotEvents.MESSAGE_RECEIVED, (message, response, slocation) => {
 	// Echo's back the message to the client. Your bot logic should sit here.
 	console.log(message)
+	console.log(slocation)
 	if(message.text){
 		var userInput = message.text
 		var trackingData = message.trackingData
 	}
 	console.log("userinput", userInput)
 	console.log("trackingData", trackingData)
+	if(slocation.text){
+		var startlocation =slocation.text
+		var trackingdata = slocation.trackingData
+	}
+	console.log("startlocation", userInput)
+	console.log("trackingdata", trackingData)
 	if (userInput == 'Customer') {
 		    let kbbutton = {
             "Columns": 6,
@@ -241,7 +248,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
-	if (message.LocationMessage) {
+	if (slocation.LocationMessage) {
 		    let elbutton = {
             "Columns": 6,
             "Rows": 1,
