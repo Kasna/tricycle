@@ -22,6 +22,7 @@ const bot = new ViberBot({
 
 const KEYBOARD_FRAME = {
 	"Type": "keyboard",
+	"InputFieldState": "hidden",
 	"DefaultHeight": false,
 	"BgColor": "#ffffff",
 	"Buttons": [
