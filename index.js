@@ -86,9 +86,14 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     // Echo's back the message to the client. Your bot logic should sit here.
     console.log(message)
+    console.log(location)
     if(message.text){
         var userInput = message.text
         var trackingData = message.trackingData
+    }
+    if (location.text) {
+    	const lat = message.LocationMessage.latitude
+    	const lon = message.LocationMessage.longitude
     }
     console.log("userinput", userInput)
     console.log("trackingData", trackingData)
@@ -241,7 +246,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
-	if (userInput == 'Start') {
+	if (location.LocationMessage) {
 		    let elbutton = {
             "Columns": 6,
             "Rows": 1,
