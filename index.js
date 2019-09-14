@@ -103,6 +103,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "TextSize": "large",
             "ActionBody": "Contact"
         }
+        KEYBOARD_FRAME.Buttons = []
+        KEYBOARD_FRAME.Buttons.push(button)
 		bot.sendMessage(userprofile[0],[
 			new TextMessage('These are the Hyperbeast Themed products!'),
 			new RichMediaMessage({
