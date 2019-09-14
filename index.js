@@ -220,7 +220,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"Columns":6,
 				"Rows":3,
 				"ActionType":"none",            
-				"Image":data.image
+				"Image":"https://www.google.com/search?q=start+location+logo&rlz=1C1GCEA_enMM862MM862&sxsrf=ACYBGNSvMaBqEX6MOMtojt_x477Dvz7WhQ:1568460766340&tbm=isch&source=iu&ictx=1&fir=ca3RBmz8Bc3ImM%253A%252CrZLSb--kJ9q2gM%252C_&vet=1&usg=AI4_-kRwvNEOlWJtVDq8yzKyRqpcplWkzg&sa=X&ved=2ahUKEwivncnWm9DkAhUTinAKHWkxAO0Q9QEwAHoECAkQBg#imgrc=ca3RBmz8Bc3ImM:"
 				}
 		let plbutton2 = {
 				"Columns":6,
@@ -258,7 +258,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"Columns":6,
 				"Rows":3,
 				"ActionType":"none",            
-				"Image":data.image
+				"Image":"https://www.google.com/search?q=start+location+logo&rlz=1C1GCEA_enMM862MM862&sxsrf=ACYBGNSvMaBqEX6MOMtojt_x477Dvz7WhQ:1568460766340&tbm=isch&source=iu&ictx=1&fir=ca3RBmz8Bc3ImM%253A%252CrZLSb--kJ9q2gM%252C_&vet=1&usg=AI4_-kRwvNEOlWJtVDq8yzKyRqpcplWkzg&sa=X&ved=2ahUKEwivncnWm9DkAhUTinAKHWkxAO0Q9QEwAHoECAkQBg#imgrc=ca3RBmz8Bc3ImM:"
 				}
 		let dlbutton2 = {
 				"Columns":6,
