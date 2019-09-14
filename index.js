@@ -241,7 +241,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
-	if (userInput == 'StartLocation') {
+	if (Message.LocationMessage) {
 		    let elbutton = {
             "Columns": 6,
             "Rows": 1,
