@@ -190,15 +190,15 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         KEYBOARD_FRAME.Buttons = []
         KEYBOARD_FRAME.Buttons.push(kbbutton)
         RICHMEDIA_FRAME.Buttons = []
-        RICHMEDIA_FRAME.Buttons.push(rmbuttom)
-        RICHMEDIA_FRAME.Buttons.push(rmbuttom2)
-        RICHMEDIA_FRAME.Buttons.push(rmbuttom3)
-        RICHMEDIA_FRAME.Buttons.push(rmbuttom4)
-        RICHMEDIA_FRAME.Buttons.push(rmbuttom5)
-        RICHMEDIA_FRAME.Buttons.push(rmbuttom6)
-        RICHMEDIA_FRAME.Buttons.push(rmbuttom7)
-        RICHMEDIA_FRAME.Buttons.push(rmbuttom8)
-        RICHMEDIA_FRAME.Buttons.push(rmbuttom9)
+        RICHMEDIA_FRAME.Buttons.push(rmbutton)
+        RICHMEDIA_FRAME.Buttons.push(rmbutton2)
+        RICHMEDIA_FRAME.Buttons.push(rmbutton3)
+        RICHMEDIA_FRAME.Buttons.push(rmbutton4)
+        RICHMEDIA_FRAME.Buttons.push(rmbutton5)
+        RICHMEDIA_FRAME.Buttons.push(rmbutton6)
+        RICHMEDIA_FRAME.Buttons.push(rmbutton7)
+        RICHMEDIA_FRAME.Buttons.push(rmbutton8)
+        RICHMEDIA_FRAME.Buttons.push(rmbutton9)
 		bot.sendMessage(userprofile[0],[
 			new TextMessage('These are the Hyperbeast Themed products!'),
 			new RichMediaMessage(RICHMEDIA_FRAME), 
