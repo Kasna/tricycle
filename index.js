@@ -212,7 +212,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "InputFieldState": "hidden",
             "TextHAlign": "center",
             "TextVAlign": "middle",
-            "ActionType": "sharelocation",
+            "ActionType": "location-picker",
             "TextSize": "large",
             "ActionBody": "Start Location"
         }
@@ -359,7 +359,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
-	if (userInput == 'fragile') {
+	if (userInput == 'fragile' || userInput == 'hard') {
 		    let dpsbutton = {
             "Columns": 6,
             "Rows": 1,
