@@ -91,12 +91,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response, slocation) => {
 		var userInput = message.text
 		var trackingData = message.trackingData
 	}
-	console.log("userinput", userInput)
-	console.log("trackingData", trackingData)
-	if(slocation.text){
-		var startlocation =slocation.text
-		var trackingdata = slocation.trackingData
-	}
 	console.log("startlocation", userInput)
 	console.log("trackingdata", trackingData)
 	if (userInput == 'Customer') {
