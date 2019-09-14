@@ -200,7 +200,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(rmbutton8)
         RICHMEDIA_FRAME.Buttons.push(rmbutton9)
 		bot.sendMessage(userprofile[0],[
-			new TextMessage('These are the Hyperbeast Themed products!'),
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
@@ -213,7 +212,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "InputFieldState": "hidden",
             "TextHAlign": "center",
             "TextVAlign": "middle",
-            "ActionType": "reply",
+            "ActionType": "location-picker",
             "TextSize": "large",
             "ActionBody": "currentloca"
         }
@@ -239,7 +238,44 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(plbutton)
         RICHMEDIA_FRAME.Buttons.push(plbutton2)
 		bot.sendMessage(userprofile[0],[
-			new TextMessage('These are the Hyperbeast Themed products!'),
+			new RichMediaMessage(RICHMEDIA_FRAME), 
+			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
+	}
+	if (userInput == 'currentloca') {
+		    let elbutton = {
+            "Columns": 6,
+            "Rows": 1,
+            "BgColor": "#4b3695",
+            "Text": "<font color='#FFFFFF'>Destination Location</font>",
+            "InputFieldState": "hidden",
+            "TextHAlign": "center",
+            "TextVAlign": "middle",
+            "ActionType": "location-picker",
+            "TextSize": "large",
+            "ActionBody": "destinationloca"
+        }
+        let dlbutton = {
+				"Columns":6,
+				"Rows":3,
+				"ActionType":"none",            
+				"Image":"https://steamuserimages-a.akamaihd.net/ugc/708527825002071756/D0DC2B2A733A820E5FBD83D6187E3A26BEE57137/"
+				}
+		let dlbutton2 = {
+				"Columns":6,
+				"Rows":2,
+				"ActionType":"none",
+				"BgColor": "#3771b0",
+				"Text":"<font color='#ffffff'>Pick Your destination location</font>",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"left"
+				}
+        KEYBOARD_FRAME.Buttons = []
+        KEYBOARD_FRAME.Buttons.push(elbutton)
+        RICHMEDIA_FRAME.Buttons = []
+        RICHMEDIA_FRAME.Buttons.push(dlbutton)
+        RICHMEDIA_FRAME.Buttons.push(dlbutton2)
+		bot.sendMessage(userprofile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
