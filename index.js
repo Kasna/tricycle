@@ -81,7 +81,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	}
 	console.log("userinput", userInput)
 	console.log("trackingData", trackingData)
-	if (userinput == 'Customer') {
+	if (userInput == 'Customer') {
 		KEYBOARD_FRAME.Buttons = []
 		KEYBOARD_FRAME.Buttons.push(button)
 		bot.sendMessage(userprofile[0],[
