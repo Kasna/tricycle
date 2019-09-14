@@ -32,7 +32,7 @@ const KEYBOARD_FRAME = {
 const RICHMEDIA_FRAME = {
 	"ButtonsGroupColumns": 6,
 	"ButtonsGroupRows": 6,
-	"BgColor": "#3771b0",
+	"BgColor": "#000000",
 	"Buttons": [
 		
 	]
@@ -93,7 +93,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	console.log("userinput", userInput)
 	console.log("trackingData", trackingData)
 	if (userInput == 'Customer') {
-		    let button = {
+		    let kbbutton = {
             "Columns": 6,
             "Rows": 1,
             "BgColor": "#4b3695",
@@ -105,43 +105,104 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "TextSize": "large",
             "ActionBody": "Contact"
         }
-        KEYBOARD_FRAME.Buttons = []
-        KEYBOARD_FRAME.Buttons.push(button)
-		bot.sendMessage(userprofile[0],[
-			new TextMessage('These are the Hyperbeast Themed products!'),
-			new RichMediaMessage({
-			    "ButtonsGroupColumns": 6,
-			    "ButtonsGroupRows": 6,
-			    "BgColor": "#3771b0",
-			    "Buttons": [ 
-			     {
+        let rmbutton = {
 				"Columns":6,
 				"Rows":3,
 				"ActionType":"none",            
 				"Image":"https://steamuserimages-a.akamaihd.net/ugc/708527825002071756/D0DC2B2A733A820E5FBD83D6187E3A26BEE57137/"
-				},
-				{
+				}
+		let rmbutton2 = {
 				"Columns":6,
 				"Rows":2,
 				"ActionType":"none",
 				"BgColor": "#3771b0",
-				"Text":"<font color='#ffffff'><b>Get Ride</b></font>",
+				"Text":"<font color='#ffffff'><b>Book Ride</b><br>Book an instant ride from your location to destination</font>",
 				"TextSize":"medium",
 				"TextVAlign":"middle",
 				"TextHAlign":"left"
-				},
-				{
+				}
+		let rmbutton3 = {
 				"Columns":6,
 				"Rows":1,
 				"ActionType":"reply",
 				"ActionBody":"getride",
-				"Text":"<font color='#ffffff'> Get Ride</font>",
+				"Text":"<font color='#ffffff'>Book Ride</font>",
 				"BgColor": "#4b3695",
 				"TextSize":"medium",
 				"TextVAlign":"middle",
 				"TextHAlign":"center"
-				}]
-			}), (new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
+				}
+		let rmbutton4 = {
+				"Columns":6,
+				"Rows":3,
+				"ActionType":"none",            
+				"Image":"https://steamuserimages-a.akamaihd.net/ugc/708527825002071756/D0DC2B2A733A820E5FBD83D6187E3A26BEE57137/"
+				}
+		let rmbutton5 = {
+				"Columns":6,
+				"Rows":2,
+				"ActionType":"none",
+				"BgColor": "#3771b0",
+				"Text":"<font color='#ffffff'><b>Deliver Package</b><br>Deliver your package instantly</font>",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"left"
+				}
+		let rmbutton6 = {
+				"Columns":6,
+				"Rows":1,
+				"ActionType":"reply",
+				"ActionBody":"deliverpackage",
+				"Text":"<font color='#ffffff'>Deliver Package</font>",
+				"BgColor": "#4b3695",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"center"
+				}
+		let rmbutton7 = {
+				"Columns":6,
+				"Rows":3,
+				"ActionType":"none",            
+				"Image":"https://steamuserimages-a.akamaihd.net/ugc/708527825002071756/D0DC2B2A733A820E5FBD83D6187E3A26BEE57137/"
+				}
+		let rmbutton8 = {
+				"Columns":6,
+				"Rows":2,
+				"ActionType":"none",
+				"BgColor": "#3771b0",
+				"Text":"<font color='#ffffff'><b>Ferry</b><br>Guaranteed daily rides from your home to your workplace or school</font>",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"left"
+				}
+		let rmbutton9 = {
+				"Columns":6,
+				"Rows":1,
+				"ActionType":"reply",
+				"ActionBody":"ferry",
+				"Text":"<font color='#ffffff'>Ferry</font>",
+				"BgColor": "#4b3695",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"center"
+				}
+        
+        KEYBOARD_FRAME.Buttons = []
+        KEYBOARD_FRAME.Buttons.push(kbbutton)
+        RICHMEDIA_FRAME.Buttons = []
+        RICHMEDIA_FRAME.Buttons.push(rmbuttom)
+        RICHMEDIA_FRAME.Buttons.push(rmbuttom2)
+        RICHMEDIA_FRAME.Buttons.push(rmbuttom3)
+        RICHMEDIA_FRAME.Buttons.push(rmbuttom4)
+        RICHMEDIA_FRAME.Buttons.push(rmbuttom5)
+        RICHMEDIA_FRAME.Buttons.push(rmbuttom6)
+        RICHMEDIA_FRAME.Buttons.push(rmbuttom7)
+        RICHMEDIA_FRAME.Buttons.push(rmbuttom8)
+        RICHMEDIA_FRAME.Buttons.push(rmbuttom9)
+		bot.sendMessage(userprofile[0],[
+			new TextMessage('These are the Hyperbeast Themed products!'),
+			new RichMediaMessage(RICHMEDIA_FRAME), 
+			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
 });
 
@@ -150,7 +211,7 @@ const port = process.env.PORT || 3000;
 app.use("/webhook", bot.middleware());
 app.listen(port, () => {
   console.log(`Application running on port: ${port}`);
-  bot.setWebhook(`https://tricycleservice.herokuapp.com/webhook`).catch(error => {
+  bot.setWebhook(`https://tricycleservice.herokuapp.com/webhook`).catch(error => { 
     console.log('Can not set webhook on following server. Is it running?');
     console.error(error);
     process.exit(1);
