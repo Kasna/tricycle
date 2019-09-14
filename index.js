@@ -4,7 +4,6 @@ const ViberBot = require('viber-bot').Bot;
 const BotEvents = require('viber-bot').Events;
 const express = require('express');
 const app = express();
-const requestify = require('requestify');
 const TextMessage = require('viber-bot').Message.Text;
 const UrlMessage = require('viber-bot').Message.Url;
 const ContactMessage = require('viber-bot').Message.Contact;
@@ -14,7 +13,6 @@ const LocationMessage = require('viber-bot').Message.Location;
 const StickerMessage = require('viber-bot').Message.Sticker;
 const RichMediaMessage = require('viber-bot').Message.RichMedia;
 const KeyboardMessage = require('viber-bot').Message.Keyboard;
-const PAT = 'EAAGZBZCPOeEz8BADP2o6eKUrLyoWpSMkalbi92m9tylUymQtrWqwOZAa9WqUQaZAayEUlCvIU1wMxEUoA6rwi3kp3QlBmjBaOE7Bt4l3JZCITaWB5ZCvnm4TBZBMeeYBRm4fx5zOLHjjhnEunRupZB4zKqy16dz9H5Q8HsNopPRCJQZDZD';
 
 const bot = new ViberBot({
 	authToken: '4a4bad117867d111-549a62a556c2e0a7-349c9be268cfcf98',
