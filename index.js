@@ -212,15 +212,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "InputFieldState": "hidden",
             "TextHAlign": "center",
             "TextVAlign": "middle",
-            "ActionType": "open-map",
+            "ActionType": "location-picker",
             "TextSize": "large",
             "ActionBody": "currentloca"
-        }  "Map": {
-    "Latitude": data.latitude
-    "Longitude": data.longitude
-  }
-  "Image": data.image
-  }
+        }
         let plbutton = {
 				"Columns":6,
 				"Rows":3,
@@ -246,7 +241,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
-	if (userInput == 'currentloca') {
+	if (userInput == 'Start Location') {
 		    let elbutton = {
             "Columns": 6,
             "Rows": 1,
