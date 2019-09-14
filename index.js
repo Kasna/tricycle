@@ -28,6 +28,15 @@ const KEYBOARD_FRAME = {
 		
 	]
 };
+const RICHMEDIA_FRAME = {
+	"ButtonsGroupColumns": 6,
+	"ButtonsGroupRows": 6,
+	"BgColor": "#3771b0",
+	"Buttons": [
+		
+	]
+};
+
 const minApiVersion = 7;
 
 const userprofile = []
@@ -82,8 +91,18 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	console.log("userinput", userInput)
 	console.log("trackingData", trackingData)
 	if (userInput == 'Customer') {
-		KEYBOARD_FRAME.Buttons = []
-		//KEYBOARD_FRAME.Buttons.push(button)
+		    let button = {
+            "Columns": 6,
+            "Rows": 1,
+            "BgColor": "#4b3695",
+            "Text": "<font color='#FFFFFF'>Contact Us</font>",
+            "InputFieldState": "hidden",
+            "TextHAlign": "center",
+            "TextVAlign": "middle",
+            "ActionType": "location-picker",
+            "TextSize": "large",
+            "ActionBody": "Contact"
+        }
 		bot.sendMessage(userprofile[0],[
 			new TextMessage('These are the Hyperbeast Themed products!'),
 			new RichMediaMessage({
