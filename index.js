@@ -81,7 +81,48 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	}
 	console.log("userinput", userInput)
 	console.log("trackingData", trackingData)
+	if (userinput == 'Customer') {
+		KEYBOARD_FRAME.Buttons = []
+		KEYBOARD_FRAME.Buttons.push(button)
+		bot.sendMessage(userprofile[0],[
+			new TextMessage('These are the Hyperbeast Themed products!'),
+			new RichMediaMessage({
+			    "ButtonsGroupColumns": 6,
+			    "ButtonsGroupRows": 6,
+			    "BgColor": "#3771b0",
+			    "Buttons": [ 
+			     {
+				"Columns":6,
+				"Rows":3,
+				"ActionType":"none",            
+				"Image":"https://steamuserimages-a.akamaihd.net/ugc/708527825002071756/D0DC2B2A733A820E5FBD83D6187E3A26BEE57137/"
+				},
+				{
+				"Columns":6,
+				"Rows":2,
+				"ActionType":"none",
+				"BgColor": "#3771b0",
+				"Text":"<font color='#ffffff'><b>Get Ride</b></font>",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"left"
+				},
+				{
+				"Columns":6,
+				"Rows":1,
+				"ActionType":"reply",
+				"ActionBody":"getride",
+				"Text":"<font color='#ffffff'> Get Ride</font>",
+				"BgColor": "#4b3695",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"center"
+				}
+			}),
+			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Selet Service Type"])
+	}
 });
+
 
 const port = process.env.PORT || 3000;
 app.use("/webhook", bot.middleware());
