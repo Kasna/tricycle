@@ -308,7 +308,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"TextVAlign":"middle",
 				"TextHAlign":"left"
 				}
-		let rmbutton3 = {
+		let dibutton3 = {
 				"Columns":6,
 				"Rows":1,
 				"ActionType":"reply",
@@ -335,7 +335,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"TextVAlign":"middle",
 				"TextHAlign":"left"
 				}
-		let rmbutton6 = {
+		let dibutton6 = {
 				"Columns":6,
 				"Rows":1,
 				"ActionType":"reply",
