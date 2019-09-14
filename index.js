@@ -83,7 +83,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	console.log("trackingData", trackingData)
 	if (userInput == 'Customer') {
 		KEYBOARD_FRAME.Buttons = []
-		KEYBOARD_FRAME.Buttons.push(button)
+		//KEYBOARD_FRAME.Buttons.push(button)
 		bot.sendMessage(userprofile[0],[
 			new TextMessage('These are the Hyperbeast Themed products!'),
 			new RichMediaMessage({
@@ -118,8 +118,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"TextVAlign":"middle",
 				"TextHAlign":"center"
 				}]
-			}),
-			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Selet Service Type"])
+			})
+			/*(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))]*/,["Selet Service Type"])
 	}
 });
 
