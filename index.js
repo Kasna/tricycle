@@ -83,3 +83,15 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	}
 	console.log("userinput", userInput)
 	console.log("trackingData", trackingData)
+});
+
+const port = process.env.PORT || 3000;
+app.use("/webhook", bot.middleware());
+app.listen(port, () => {
+  console.log(`Application running on port: ${port}`);
+  bot.setWebhook(`https://tricycleservice.herokuapp.com/webhook`).catch(error => {
+    console.log('Can not set webhook on following server. Is it running?');
+    console.error(error);
+    process.exit(1);
+  });
+});
