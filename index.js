@@ -77,7 +77,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 			"ActionBody": "Driver"
 		}
 	]
-}),["UserType"]).catch(function(error){
+},"","","",minApiVersion),["UserType"]).catch(function(error){
 		console.log('error', error);
 	});
 });
