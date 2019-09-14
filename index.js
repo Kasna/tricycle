@@ -139,7 +139,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"TextVAlign":"middle",
 				"TextHAlign":"center"
 				}]
-			})],["Selet Service Type"])
+			}) (new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
 });
 
