@@ -97,6 +97,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     }
     console.log("userinput", userInput)
     console.log("trackingData", trackingData)
+    console.log("lat", userInput)
+    console.log("lon", trackingData)
     if(userInput == 'Customer'){
 		    let kbbutton = {
             "Columns": 6,
