@@ -48,6 +48,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 	userprofile.push(uPF);
 	bot.sendMessage(uPF,new TextMessage('Hello '+uPF.name+'! Welcome to Tricycle Service!',{
 	"Type": "keyboard",
+	"InputFieldState": "hidden",
 	"DefaultHeight": false,
 	"BgColor": "#ffffff",
 	"Buttons": [
