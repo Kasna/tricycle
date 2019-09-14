@@ -83,10 +83,9 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 });
 
 
-bot.on(BotEvents.MESSAGE_RECEIVED, (message, response, slocation) => {
+bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	// Echo's back the message to the client. Your bot logic should sit here.
 	console.log(message)
-	console.log(slocation)
 	if(message.text){
 		var userInput = message.text
 		var trackingData = message.trackingData
