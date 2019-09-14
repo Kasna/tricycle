@@ -212,7 +212,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "InputFieldState": "hidden",
             "TextHAlign": "center",
             "TextVAlign": "middle",
-            "ActionType": "reply",
+            "ActionType": "LocationMessage",
             "TextSize": "large",
             "ActionBody": "currentloca"
         }
