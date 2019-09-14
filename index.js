@@ -239,7 +239,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(plbutton2)
 		bot.sendMessage(userprofile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
-			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
+			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
 	if (userInput == 'Start Location') {
 		    let elbutton = {
@@ -279,7 +279,86 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
-	
+		if (userInput == 'deliverpackage') {
+		    let dpbutton = {
+            "Columns": 6,
+            "Rows": 1,
+            "BgColor": "#4b3695",
+            "Text": "<font color='#FFFFFF'>Contacat Us</font>",
+            "InputFieldState": "hidden",
+            "TextHAlign": "center",
+            "TextVAlign": "middle",
+            "ActionType": "reply",
+            "TextSize": "large",
+            "ActionBody": "contact"
+        }
+        let dibutton = {
+				"Columns":6,
+				"Rows":3,
+				"ActionType":"none",            
+				"Image":"https://www.google.com/search?q=start+location+logo&rlz=1C1GCEA_enMM862MM862&sxsrf=ACYBGNSvMaBqEX6MOMtojt_x477Dvz7WhQ:1568460766340&tbm=isch&source=iu&ictx=1&fir=ca3RBmz8Bc3ImM%253A%252CrZLSb--kJ9q2gM%252C_&vet=1&usg=AI4_-kRwvNEOlWJtVDq8yzKyRqpcplWkzg&sa=X&ved=2ahUKEwivncnWm9DkAhUTinAKHWkxAO0Q9QEwAHoECAkQBg#imgrc=ca3RBmz8Bc3ImM:"
+				}
+		let dibutton2 = {
+				"Columns":6,
+				"Rows":2,
+				"ActionType":"none",
+				"BgColor": "#3771b0",
+				"Text":"<font color='#ffffff'>Pick your delivery items</font>",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"left"
+				}
+		let rmbutton3 = {
+				"Columns":6,
+				"Rows":1,
+				"ActionType":"reply",
+				"ActionBody":"fragile",
+				"Text":"<font color='#ffffff'>Fragile</font>",
+				"BgColor": "#4b3695",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"center"
+				}
+		 let dibutton4 = {
+				"Columns":6,
+				"Rows":3,
+				"ActionType":"none",            
+				"Image":"https://www.google.com/search?q=start+location+logo&rlz=1C1GCEA_enMM862MM862&sxsrf=ACYBGNSvMaBqEX6MOMtojt_x477Dvz7WhQ:1568460766340&tbm=isch&source=iu&ictx=1&fir=ca3RBmz8Bc3ImM%253A%252CrZLSb--kJ9q2gM%252C_&vet=1&usg=AI4_-kRwvNEOlWJtVDq8yzKyRqpcplWkzg&sa=X&ved=2ahUKEwivncnWm9DkAhUTinAKHWkxAO0Q9QEwAHoECAkQBg#imgrc=ca3RBmz8Bc3ImM:"
+				}
+		let dibutton5 = {
+				"Columns":6,
+				"Rows":2,
+				"ActionType":"none",
+				"BgColor": "#3771b0",
+				"Text":"<font color='#ffffff'>Pick your delivery items</font>",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"left"
+				}
+		let rmbutton6 = {
+				"Columns":6,
+				"Rows":1,
+				"ActionType":"reply",
+				"ActionBody":"hard",
+				"Text":"<font color='#ffffff'>Hard</font>",
+				"BgColor": "#4b3695",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"center"
+				}
+        KEYBOARD_FRAME.Buttons = []
+        KEYBOARD_FRAME.Buttons.push(dpbutton)
+        RICHMEDIA_FRAME.Buttons = []
+        RICHMEDIA_FRAME.Buttons.push(dibutton)
+        RICHMEDIA_FRAME.Buttons.push(dibutton2)
+        RICHMEDIA_FRAME.Buttons.push(dibutton3)
+        RICHMEDIA_FRAME.Buttons.push(dibutton4)
+        RICHMEDIA_FRAME.Buttons.push(dibutton5)
+        RICHMEDIA_FRAME.Buttons.push(dibutton6)
+		bot.sendMessage(userprofile[0],[
+			new RichMediaMessage(RICHMEDIA_FRAME), 
+			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
+	}
 });
 
 
