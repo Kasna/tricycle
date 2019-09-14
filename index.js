@@ -214,7 +214,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "TextVAlign": "middle",
             "ActionType": "location-picker",
             "TextSize": "large",
-            "ActionBody": "Start Location"
+            "ActionBody": "StartLocation"
         }
         let plbutton = {
 				"Columns":6,
@@ -241,7 +241,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
-	if (userInput == 'Start Location') {
+	if (userInput == 'StartLocation') {
 		    let elbutton = {
             "Columns": 6,
             "Rows": 1,
