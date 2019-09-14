@@ -204,6 +204,46 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
+		if (userInput == 'getride') {
+		    let slbutton = {
+            "Columns": 6,
+            "Rows": 1,
+            "BgColor": "#4b3695",
+            "Text": "<font color='#FFFFFF'>Start Location</font>",
+            "InputFieldState": "hidden",
+            "TextHAlign": "center",
+            "TextVAlign": "middle",
+            "ActionType": "reply",
+            "TextSize": "large",
+            "ActionBody": "currentloca"
+        }
+        let plbutton = {
+				"Columns":6,
+				"Rows":3,
+				"ActionType":"none",            
+				"Image":"https://steamuserimages-a.akamaihd.net/ugc/708527825002071756/D0DC2B2A733A820E5FBD83D6187E3A26BEE57137/"
+				}
+		let plbutton2 = {
+				"Columns":6,
+				"Rows":2,
+				"ActionType":"none",
+				"BgColor": "#3771b0",
+				"Text":"<font color='#ffffff'>Pick Your current location</font>",
+				"TextSize":"medium",
+				"TextVAlign":"middle",
+				"TextHAlign":"left"
+				}
+        KEYBOARD_FRAME.Buttons = []
+        KEYBOARD_FRAME.Buttons.push(slbutton)
+        RICHMEDIA_FRAME.Buttons = []
+        RICHMEDIA_FRAME.Buttons.push(plbutton)
+        RICHMEDIA_FRAME.Buttons.push(plbutton2)
+		bot.sendMessage(userprofile[0],[
+			new TextMessage('These are the Hyperbeast Themed products!'),
+			new RichMediaMessage(RICHMEDIA_FRAME), 
+			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
+	}
+	
 });
 
 
