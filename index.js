@@ -42,10 +42,10 @@ const minApiVersion = 7;
 const userProfile = []
 // Perfect! Now here's the key part:
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish ) => {
-	const userpro = userProfile.userProfile
-  console.log(userpro);
-	userprofile.push(userpro);
-	bot.sendMessage(userpro,new TextMessage('Hello '+userpro.name+'! Welcome to Tricycle Service!',{
+	const uPF = userProfile.userProfile
+  console.log(uPF);
+	userprofile.push(uPF);
+	bot.sendMessage(uPF,new TextMessage('Hello '+uPF.name+'! Welcome to Tricycle Service!',{
 	"Type": "keyboard",
 	"InputFieldState": "hidden",
 	"DefaultHeight": false,
