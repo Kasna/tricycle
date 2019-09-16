@@ -41,11 +41,11 @@ const minApiVersion = 7;
 
 const userprofile = []
 // Perfect! Now here's the key part:
-bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish) => {
-    const uPF = userProfile.userProfile
+bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish ) => {
+	const uPF = userProfile.userProfile
   console.log(uPF);
-    userprofile.push(uPF);
-    bot.sendMessage(uPF,new TextMessage('Hi '+uPF.name+'! Welcome to Hyperbeast!',{
+	userprofile.push(uPF);
+	bot.sendMessage(uPF,new TextMessage('Hello '+uPF.name+'! Welcome to Tricycle Service!',{
 	"Type": "keyboard",
 	"InputFieldState": "hidden",
 	"DefaultHeight": false,
@@ -198,7 +198,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(rmbutton7)
         RICHMEDIA_FRAME.Buttons.push(rmbutton8)
         RICHMEDIA_FRAME.Buttons.push(rmbutton9)
-		bot.sendMessage(userprofile[],[
+		bot.sendMessage(userprofile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
@@ -236,7 +236,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons = []
         RICHMEDIA_FRAME.Buttons.push(plbutton)
         RICHMEDIA_FRAME.Buttons.push(plbutton2)
-		bot.sendMessage(userprofile[],[
+		bot.sendMessage(userprofile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
