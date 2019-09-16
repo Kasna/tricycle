@@ -198,7 +198,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(rmbutton7)
         RICHMEDIA_FRAME.Buttons.push(rmbutton8)
         RICHMEDIA_FRAME.Buttons.push(rmbutton9)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(userprofile[],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
@@ -236,7 +236,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons = []
         RICHMEDIA_FRAME.Buttons.push(plbutton)
         RICHMEDIA_FRAME.Buttons.push(plbutton2)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(userprofile[],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
