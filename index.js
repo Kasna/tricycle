@@ -39,7 +39,7 @@ const RICHMEDIA_FRAME = {
 
 const minApiVersion = 7;
 
-const userprofile = []
+const userProfile = []
 // Perfect! Now here's the key part:
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish ) => {
 	const userpro = userProfile.userProfile
