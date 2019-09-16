@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Kasna/tricycle#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "requestify": "^0.2.5",
     "viber-bot": "^1.0.14"
   }
 }
