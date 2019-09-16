@@ -44,7 +44,7 @@ const userProfile = []
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish ) => {
 	const uPF = userProfile.userProfile
   console.log(uPF);
-	userprofile.push(uPF);
+	userProfile.push(uPF);
 	bot.sendMessage(uPF,new TextMessage('Hello '+uPF.name+'! Welcome to Tricycle Service!',{
 	"Type": "keyboard",
 	"InputFieldState": "hidden",
@@ -198,7 +198,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(rmbutton7)
         RICHMEDIA_FRAME.Buttons.push(rmbutton8)
         RICHMEDIA_FRAME.Buttons.push(rmbutton9)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(userProfile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
@@ -236,7 +236,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons = []
         RICHMEDIA_FRAME.Buttons.push(plbutton)
         RICHMEDIA_FRAME.Buttons.push(plbutton2)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(userProfile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
@@ -274,7 +274,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons = []
         RICHMEDIA_FRAME.Buttons.push(dlbutton)
         RICHMEDIA_FRAME.Buttons.push(dlbutton2)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(userProfile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick End Location"])
 	}
@@ -354,7 +354,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(dibutton4)
         RICHMEDIA_FRAME.Buttons.push(dibutton5)
         RICHMEDIA_FRAME.Buttons.push(dibutton6)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(userProfile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
@@ -464,7 +464,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(disbutton7)
         RICHMEDIA_FRAME.Buttons.push(disbutton8)
         RICHMEDIA_FRAME.Buttons.push(disbutton9)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(userProfile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
@@ -502,7 +502,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons = []
         RICHMEDIA_FRAME.Buttons.push(splbutton)
         RICHMEDIA_FRAME.Buttons.push(splbutton2)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(userProfile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
