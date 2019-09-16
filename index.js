@@ -41,11 +41,11 @@ const minApiVersion = 7;
 
 const userprofile = []
 // Perfect! Now here's the key part:
-bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish ) => {
-	const uPF = userProfile.userProfile
+bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish) => {
+    const uPF = userProfile.userProfile
   console.log(uPF);
-	userprofile.push(uPF);
-	bot.sendMessage(uPF,new TextMessage('Hello '+uPF.name+'! Welcome to Tricycle Service!',{
+    userprofile.push(uPF);
+    bot.sendMessage(uPF,new TextMessage('Hi '+uPF.name+'! Welcome to Hyperbeast!',{
 	"Type": "keyboard",
 	"InputFieldState": "hidden",
 	"DefaultHeight": false,
