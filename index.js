@@ -1,5 +1,4 @@
 'use strict';
-
 const ViberBot = require('viber-bot').Bot;
 const BotEvents = require('viber-bot').Events;
 const express = require('express');
@@ -241,7 +240,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
-	if (location.LocationMessage) {
+	if (userInput == 'StartLocation') {
 		    let elbutton = {
             "Columns": 6,
             "Rows": 1,
