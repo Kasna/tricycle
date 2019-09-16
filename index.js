@@ -42,10 +42,10 @@ const minApiVersion = 7;
 const userprofile = []
 // Perfect! Now here's the key part:
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish ) => {
-	const uPF = userProfile.userProfile
-  console.log(uPF);
-	userprofile.push(uPF);
-	bot.sendMessage(uPF,new TextMessage('Hello '+uPF.name+'! Welcome to Tricycle Service!',{
+	const userpro = userProfile.userProfile
+  console.log(userpro);
+	userprofile.push(userpro);
+	bot.sendMessage(userpro,new TextMessage('Hello '+userpro.name+'! Welcome to Tricycle Service!',{
 	"Type": "keyboard",
 	"InputFieldState": "hidden",
 	"DefaultHeight": false,
@@ -276,7 +276,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(dlbutton2)
 		bot.sendMessage(userprofile[0],[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
-			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
+			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick End Location"])
 	}
 		if (userInput == 'deliverpackage') {
 		    let dpbutton = {
