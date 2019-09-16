@@ -17,7 +17,7 @@ const KeyboardMessage = require('viber-bot').Message.Keyboard;
 const PAT = 'EAAGZBZCPOeEz8BADP2o6eKUrLyoWpSMkalbi92m9tylUymQtrWqwOZAa9WqUQaZAayEUlCvIU1wMxEUoA6rwi3kp3QlBmjBaOE7Bt4l3JZCITaWB5ZCvnm4TBZBMeeYBRm4fx5zOLHjjhnEunRupZB4zKqy16dz9H5Q8HsNopPRCJQZDZD';
 
 const bot = new ViberBot({
-    authToken: '49e872d482e7d5f4-26150ff0836449f8-3f0f198008f8c8e6',
+    authToken: '4a4bad117867d111-549a62a556c2e0a7-349c9be268cfcf98',
     name: "Hyperbeast",
     avatar: "https://dl-media.viber.com/1/share/2/long/vibes/icon/image/0x0/800b/b85aacbdc579999439e781f37f8bec50b1238229df591acc3996c50e97b5800b.jpg" // It is recommended to be 720x720, and no more than 100kb.
 });
