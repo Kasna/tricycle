@@ -180,7 +180,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		{
 			"Columns": 3,
 			"Rows": 1,
-			"BgColor": "#e6f5ff",
+			"BgColor": "#00ff00",
 			"ActionType": "reply",
 			"ActionBody": "Booking",
 			"Text": "<font color='#000000'>Booking</font>"
@@ -189,8 +189,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
-			"ActionBody": "Cancle",
-			"Text": "<font color='#000000'>Cancle</font>"
+			"ActionBody": "Cancel",
+			"Text": "<font color='#000000'>Cancel</font>"
 		},{
 			"Columns": 6,
 			"Rows": 1,
