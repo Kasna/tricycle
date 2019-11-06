@@ -233,7 +233,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>Home</font>"
 		}
 	]
-			},"","","",minApiVersion))],["Select server Type"])
+			},"","","",minApiVersion))],["show cost"])
 	}
 	if (userInput == 'Booking') {   
 		bot.sendMessage(uPF,[
