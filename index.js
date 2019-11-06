@@ -114,8 +114,33 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		if (userInput == 'ride') {
 		    
 		bot.sendMessage(uPF,[
-			new RichMediaMessage(RICHMEDIA_FRAME), 
-			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
+			new TextMessage("Pick Your start location"), 
+			(new KeyboardMessage({
+				"Type": "keyboard",
+				"InputFieldState": "hidden",
+	"Revision": 1,
+	"Buttons": [
+		{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Home",
+			"Text": "<font color='#000000'>Home</font>"
+		},{
+			"Columns": 6,
+            "Rows": 1,
+            "BgColor": "#4b3695",
+            "Text": "<font color='#FFFFFF'>Destination Location</font>",
+            "InputFieldState": "hidden",
+            "TextHAlign": "center",
+            "TextVAlign": "middle",
+            "ActionType": "location-picker",
+            "TextSize": "large",
+            "ActionBody": "destinationloca"
+        }
+	]
+			},"","","",minApiVersion))],["Pick current location"])
 	}
 	if (userInput == 'StartLocation') {
 		    let elbutton = {
