@@ -187,7 +187,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         },{
 			"Columns": 3,
 			"Rows": 1,
-			"BgColor": "#e6f5ff",
+			"BgColor": "#ff0000",
 			"ActionType": "reply",
 			"ActionBody": "Cancel",
 			"Text": "<font color='#000000'>Cancel</font>"
