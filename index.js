@@ -74,7 +74,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     }
     console.log("userinput", userInput)
     console.log("trackingData", trackingData)
-    if(userInput == 'Customer' || userInput == 'Home'){
+    if(userInput == 'Customer' || userInput == 'Home' ){
 		    bot.sendMessage(uPF,[
 			new TextMessage("Choose Service Type"),
 			new KeyboardMessage({
@@ -160,7 +160,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "ActionType": "location-picker",
             "TextSize": "large",
             "ActionBody": "StartLocation",
-            "Image": "https://images.app.goo.gl/mt84tvigzs7cAEvj8"
+            "Image": "https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/66-512.png"
         },{
 			"Columns": 6,
 			"Rows": 1,
@@ -191,8 +191,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "TextVAlign": "middle",
             "ActionType": "location-picker",
             "TextSize": "large",
-            "ActionBody": "EndLocation"
-            "Image": "https://images.app.goo.gl/mt84tvigzs7cAEvj8"
+            "ActionBody": "EndLocation",
+            "Image": "https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/66-512.png"
         },{
 			"Columns": 6,
 			"Rows": 1,
