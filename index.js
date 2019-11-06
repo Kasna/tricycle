@@ -159,8 +159,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "TextVAlign": "middle",
             "ActionType": "location-picker",
             "TextSize": "large",
-            "ActionBody": "StartLocation"
-            "Image": "https://images.app.goo.gl/yYnzLdESwPCuz9FQ9"
+            "ActionBody": "StartLocation",
+            "Image": "https://images.app.goo.gl/mt84tvigzs7cAEvj8"
         },{
 			"Columns": 6,
 			"Rows": 1,
