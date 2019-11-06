@@ -69,6 +69,9 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         var userInput = message.text
         var trackingData = message.trackingData[0]
     }
+    if(message.latitude && message.longitude){
+    	var trackingData = message.trackingData[0]
+    }
     console.log("userinput", userInput)
     console.log("trackingData", trackingData)
     if(userInput == 'Customer'){
