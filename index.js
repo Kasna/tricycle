@@ -67,7 +67,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     var uPF = response.userProfile
     if(message.text){
         var userInput = message.text
-        var trackingData = message.trackingData
+        var trackingData = message.trackingData[0]
     }
     console.log("userinput", userInput)
     console.log("trackingData", trackingData)
@@ -133,9 +133,9 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>Home</font>"
 		}
 	]
-			},"","","",minApiVersion))],["Pick current location"])
+			},"","","",minApiVersion))],["StartLocation"])
 	}
-	if (userInput == 'StartLocation') {
+	if (trackingData == 'StartLocation') {
 		    
 		bot.sendMessage(uPF,[
 			new TextMessage("Pick Your End location"), 
@@ -148,7 +148,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Columns": 6,
             "Rows": 1,
             "BgColor": "#e6f5ff",
-            "Text": "<font color='#000000'>StartLocation</font>",
+            "Text": "<font color='#000000'>EndLocation</font>",
             "InputFieldState": "hidden",
             "TextHAlign": "center",
             "TextVAlign": "middle",
