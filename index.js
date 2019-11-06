@@ -192,6 +192,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "ActionType": "location-picker",
             "TextSize": "large",
             "ActionBody": "EndLocation"
+            "Image": "https://images.app.goo.gl/mt84tvigzs7cAEvj8"
         },{
 			"Columns": 6,
 			"Rows": 1,
