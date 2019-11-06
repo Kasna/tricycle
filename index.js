@@ -320,6 +320,24 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion)],["phoneno"])
 	}
+	if(userInput == 'phoneno'){
+		    bot.sendMessage(uPF,[
+			new TextMessage("NRC photo"),
+			new KeyboardMessage({
+				"Type": "keyboard",
+	"Revision": 1,
+	"Buttons": [
+		{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "nrc",
+			"Text": "<font color='#000000'>Register</font>"
+		}
+	]
+			},"","","",minApiVersion)],["NRC card"])
+	}
 });
 
 
