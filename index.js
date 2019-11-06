@@ -102,7 +102,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 					"BgMediaType": "picture",
 					"Text": "Ride",
 					"BgColor": "#000000",
-					"TextOpacity": 60,
 					"Rows": 1,
 					"Columns": 3
 				}, {
@@ -110,14 +109,13 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 					"ActionType": "reply",
 					"BgColor": "#000000",
 					"Text": "Delivery",
-					"TextOpacity": 60,
 					"Rows": 1,
 					"Columns": 3
 				}]
 			}), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
-		if (userInput == 'getride') {
+		if (userInput == 'ride') {
 		    let slbutton = {
             "Columns": 6,
             "Rows": 1,
