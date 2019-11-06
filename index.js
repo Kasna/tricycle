@@ -268,45 +268,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion))],["show driver"])
 	}
-
-	if (userInput == 'small' || userInput =='middle' || userInput == 'Hight') {
-		    let sdlbutton = {
-            "Columns": 6,
-            "Rows": 1,
-            "BgColor": "#4b3695",
-            "Text": "<font color='#FFFFFF'>Start Location</font>",
-            "InputFieldState": "hidden",
-            "TextHAlign": "center",
-            "TextVAlign": "middle",
-            "ActionType": "location-picker",
-            "TextSize": "large",
-            "ActionBody": "StartLocation"
-        }
-        let splbutton = {
-				"Columns":6,
-				"Rows":3,
-				"ActionType":"none",            
-				"Image":"https://www.google.com/search?q=start+location+logo&rlz=1C1GCEA_enMM862MM862&sxsrf=ACYBGNSvMaBqEX6MOMtojt_x477Dvz7WhQ:1568460766340&tbm=isch&source=iu&ictx=1&fir=ca3RBmz8Bc3ImM%253A%252CrZLSb--kJ9q2gM%252C_&vet=1&usg=AI4_-kRwvNEOlWJtVDq8yzKyRqpcplWkzg&sa=X&ved=2ahUKEwivncnWm9DkAhUTinAKHWkxAO0Q9QEwAHoECAkQBg#imgrc=ca3RBmz8Bc3ImM:"
-				}
-		let splbutton2 = {
-				"Columns":6,
-				"Rows":2,
-				"ActionType":"none",
-				"BgColor": "#3771b0",
-				"Text":"<font color='#ffffff'>Pick Your current location</font>",
-				"TextSize":"medium",
-				"TextVAlign":"middle",
-				"TextHAlign":"left"
-				}
-        KEYBOARD_FRAME.Buttons = []
-        KEYBOARD_FRAME.Buttons.push(sdlbutton)
-        RICHMEDIA_FRAME.Buttons = []
-        RICHMEDIA_FRAME.Buttons.push(splbutton)
-        RICHMEDIA_FRAME.Buttons.push(splbutton2)
-		bot.sendMessage(uPF,[
-			new RichMediaMessage(RICHMEDIA_FRAME), 
-			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
-	}
 });
 
 
