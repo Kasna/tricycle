@@ -107,6 +107,39 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion)],["Select service Type"])
 	}
+	if(userInput == 'Confirm' ){
+		    bot.sendMessage(uPF,[
+			new TextMessage("kkk is comming"),
+			new KeyboardMessage({
+				"Type": "keyboard",
+				"InputFieldState": "hidden",
+	"Revision": 1,
+	"Buttons": [
+		{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "ride",
+			"Text": "<font color='#000000'>Ride</font>"
+		},{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Delivery",
+			"Text": "<font color='#000000'>Delivery</font>"
+		},{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Home",
+			"Text": "<font color='#000000'>Home</font>"
+		}
+	]
+			},"","","",minApiVersion)],["Select service Type"])
+	}
 	if(userInput == 'Delivery'){
 		    bot.sendMessage(uPF,[
 			new TextMessage("Choose items Type"),
@@ -250,8 +283,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Rows": 1,
 			"BgColor": "#99ffbb",
 			"ActionType": "reply",
-			"ActionBody": "Comfrim",
-			"Text": "<font color='#000000'>Comfrim</font>"
+			"ActionBody": "Confirm",
+			"Text": "<font color='#000000'>Confirm</font>"
         },{
 			"Columns": 3,
 			"Rows": 1,
