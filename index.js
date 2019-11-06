@@ -180,14 +180,14 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		{
 			"Columns": 3,
 			"Rows": 1,
-			"BgColor": "#00ff00",
+			"BgColor": "#99ffbb",
 			"ActionType": "reply",
 			"ActionBody": "Booking",
 			"Text": "<font color='#000000'>Booking</font>"
         },{
 			"Columns": 3,
 			"Rows": 1,
-			"BgColor": "#ff0000",
+			"BgColor": "#ff9999",
 			"ActionType": "reply",
 			"ActionBody": "Cancel",
 			"Text": "<font color='#000000'>Cancel</font>"
@@ -204,7 +204,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	}
 	if (userInput == 'Booking') {   
 		bot.sendMessage(uPF,[
-			new TextMessage("Cost is kkkk"), 
+			new TextMessage("Driver is kkkk"), 
 			(new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
@@ -213,14 +213,14 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		{
 			"Columns": 3,
 			"Rows": 1,
-			"BgColor": "#00ff00",
+			"BgColor": "#99ffbb",
 			"ActionType": "reply",
 			"ActionBody": "Comfrim",
 			"Text": "<font color='#000000'>Comfrim</font>"
         },{
 			"Columns": 3,
 			"Rows": 1,
-			"BgColor": "#ff0000",
+			"BgColor": "#ff9999",
 			"ActionType": "reply",
 			"ActionBody": "Cancel",
 			"Text": "<font color='#000000'>Cancel</font>"
@@ -233,7 +233,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>Home</font>"
 		}
 	]
-			},"","","",minApiVersion))],["Select server Type"])
+			},"","","",minApiVersion))],["show driver"])
 	}
 	if (userInput == 'fragile' || userInput == 'hard') {
 		    let dpsbutton = {
