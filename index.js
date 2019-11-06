@@ -91,114 +91,30 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     console.log("userinput", userInput)
     console.log("trackingData", trackingData)
     if(userInput == 'Customer'){
-		    let kbbutton = {
-            "Columns": 6,
-            "Rows": 1,
-            "BgColor": "#4b3695",
-            "Text": "<font color='#FFFFFF'>Contact Us</font>",
-            "InputFieldState": "hidden",
-            "TextHAlign": "center",
-            "TextVAlign": "middle",
-            "ActionType": "reply",
-            "TextSize": "large",
-            "ActionBody": "Contact"
-        }
-        let rmbutton = {
-				"Columns":6,
-				"Rows":3,
-				"ActionType":"none",            
-				"Image":"https://steamuserimages-a.akamaihd.net/ugc/708527825002071756/D0DC2B2A733A820E5FBD83D6187E3A26BEE57137/"
-				}
-		let rmbutton2 = {
-				"Columns":6,
-				"Rows":2,
-				"ActionType":"none",
-				"BgColor": "#3771b0",
-				"Text":"<font color='#ffffff'><b>Book Ride</b><br>Book an instant ride from your location to destination</font>",
-				"TextSize":"medium",
-				"TextVAlign":"middle",
-				"TextHAlign":"left"
-				}
-		let rmbutton3 = {
-				"Columns":6,
-				"Rows":1,
-				"ActionType":"reply",
-				"ActionBody":"getride",
-				"Text":"<font color='#ffffff'>Book Ride</font>",
-				"BgColor": "#4b3695",
-				"TextSize":"medium",
-				"TextVAlign":"middle",
-				"TextHAlign":"center"
-				}
-		let rmbutton4 = {
-				"Columns":6,
-				"Rows":3,
-				"ActionType":"none",            
-				"Image":"https://steamuserimages-a.akamaihd.net/ugc/708527825002071756/D0DC2B2A733A820E5FBD83D6187E3A26BEE57137/"
-				}
-		let rmbutton5 = {
-				"Columns":6,
-				"Rows":2,
-				"ActionType":"none",
-				"BgColor": "#3771b0",
-				"Text":"<font color='#ffffff'><b>Deliver Package</b><br>Deliver your package instantly</font>",
-				"TextSize":"medium",
-				"TextVAlign":"middle",
-				"TextHAlign":"left"
-				}
-		let rmbutton6 = {
-				"Columns":6,
-				"Rows":1,
-				"ActionType":"reply",
-				"ActionBody":"deliverpackage",
-				"Text":"<font color='#ffffff'>Deliver Package</font>",
-				"BgColor": "#4b3695",
-				"TextSize":"medium",
-				"TextVAlign":"middle",
-				"TextHAlign":"center"
-				}
-		let rmbutton7 = {
-				"Columns":6,
-				"Rows":3,
-				"ActionType":"none",            
-				"Image":"https://steamuserimages-a.akamaihd.net/ugc/708527825002071756/D0DC2B2A733A820E5FBD83D6187E3A26BEE57137/"
-				}
-		let rmbutton8 = {
-				"Columns":6,
-				"Rows":2,
-				"ActionType":"none",
-				"BgColor": "#3771b0",
-				"Text":"<font color='#ffffff'><b>Ferry</b><br>Guaranteed daily rides from your home to your workplace or school</font>",
-				"TextSize":"medium",
-				"TextVAlign":"middle",
-				"TextHAlign":"left"
-				}
-		let rmbutton9 = {
-				"Columns":6,
-				"Rows":1,
-				"ActionType":"reply",
-				"ActionBody":"ferry",
-				"Text":"<font color='#ffffff'>Ferry</font>",
-				"BgColor": "#4b3695",
-				"TextSize":"medium",
-				"TextVAlign":"middle",
-				"TextHAlign":"center"
-				}
-        
-        KEYBOARD_FRAME.Buttons = []
-        KEYBOARD_FRAME.Buttons.push(kbbutton)
-        RICHMEDIA_FRAME.Buttons = []
-        RICHMEDIA_FRAME.Buttons.push(rmbutton)
-        RICHMEDIA_FRAME.Buttons.push(rmbutton2)
-        RICHMEDIA_FRAME.Buttons.push(rmbutton3)
-        RICHMEDIA_FRAME.Buttons.push(rmbutton4)
-        RICHMEDIA_FRAME.Buttons.push(rmbutton5)
-        RICHMEDIA_FRAME.Buttons.push(rmbutton6)
-        RICHMEDIA_FRAME.Buttons.push(rmbutton7)
-        RICHMEDIA_FRAME.Buttons.push(rmbutton8)
-        RICHMEDIA_FRAME.Buttons.push(rmbutton9)
-		bot.sendMessage(uPF,[
-			new RichMediaMessage(RICHMEDIA_FRAME), 
+		    bot.sendMessage(uPF,[
+			new RichMediaMessage({
+				"ButtonsGroupColumns": 3,
+				"ButtonsGroupRows": 1,
+				"BgColor": "#FFFFFF",
+				"Buttons": [{
+					"ActionBody": "http://www.website.com/go_here",
+					"ActionType": "open-url",
+					"BgMediaType": "picture",
+					"Image": "http://www.images.com/img.jpg",
+					"BgColor": "#000000",
+					"TextOpacity": 60,
+					"Rows": 1,
+					"Columns": 3
+				}, {
+					"ActionBody": "http://www.website.com/go_here",
+					"ActionType": "open-url",
+					"BgColor": "#85bb65",
+					"Text": "Buy",
+					"TextOpacity": 60,
+					"Rows": 1,
+					"Columns": 3
+				}]
+			}), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
 		if (userInput == 'getride') {
