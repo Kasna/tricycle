@@ -97,19 +97,19 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"ButtonsGroupRows": 1,
 				"BgColor": "#FFFFFF",
 				"Buttons": [{
-					"ActionBody": "http://www.website.com/go_here",
-					"ActionType": "open-url",
+					"ActionBody": "ride",
+					"ActionType": "reply",
 					"BgMediaType": "picture",
-					"Image": "http://www.images.com/img.jpg",
+					"Text": "Ride",
 					"BgColor": "#000000",
 					"TextOpacity": 60,
 					"Rows": 1,
 					"Columns": 3
 				}, {
-					"ActionBody": "http://www.website.com/go_here",
-					"ActionType": "open-url",
-					"BgColor": "#85bb65",
-					"Text": "Buy",
+					"ActionBody": "delivery",
+					"ActionType": "reply",
+					"BgColor": "#000000",
+					"Text": "Delivery",
 					"TextOpacity": 60,
 					"Rows": 1,
 					"Columns": 3
