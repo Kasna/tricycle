@@ -320,7 +320,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion)],["phoneno"])
 	}
-	if(userInput == 'phoneno'){
+	if(trackingData == 'phoneno'){
 		    bot.sendMessage(uPF,[
 			new TextMessage("NRC photo"),
 			new KeyboardMessage({
