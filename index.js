@@ -105,6 +105,20 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
+			"ActionBody": "ride",
+			"Text": "<font color='#000000'>Ride</font>"
+		},{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Delivery",
+			"Text": "<font color='#000000'>Delivery</font>"
+		},{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
 			"ActionBody": "Home",
 			"Text": "<font color='#000000'>Home</font>"
 		}
