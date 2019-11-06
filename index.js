@@ -124,7 +124,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Columns": 6,
             "Rows": 1,
             "BgColor": "#e6f5ff",
-            "Text": "<font color='#FFFFFF'>StartLocation</font>",
+            "Text": "<font color='#000000'>StartLocation</font>",
             "InputFieldState": "hidden",
             "TextHAlign": "center",
             "TextVAlign": "middle",
