@@ -171,7 +171,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion))],["StartLocation"])
 	}
-	if (trackingData == 'StartLocation') {
+	if (trackingData == 'StartLocation' && userInput != 'Home') {
 		    
 		bot.sendMessage(uPF,[
 			new TextMessage("Pick Your End location"), 
@@ -202,7 +202,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion))],["EndLocation"])
 	}
-		if (trackingData == 'EndLocation') {   
+		if (trackingData == 'EndLocation' && userInput != 'Home') {   
 		bot.sendMessage(uPF,[
 			new TextMessage("Cost is kkkk"), 
 			(new KeyboardMessage({
