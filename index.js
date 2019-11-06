@@ -333,7 +333,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "nrc",
-			"Text": "<font color='#000000'>Register</font>"
+			"Text": "<font color='#000000'>Regi</font>"
 		}
 	]
 			},"","","",minApiVersion)],["NRC card"])
