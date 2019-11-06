@@ -192,8 +192,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "TextVAlign": "middle",
             "ActionType": "location-picker",
             "TextSize": "large",
-            "ActionBody": "StartLocation",
-            "Image": "https://www.freeiconspng.com/uploads/blue-location-icon-26.png"
+            "ActionBody": "StartLocation"
         },{
 			"Columns": 6,
 			"Rows": 1,
@@ -224,8 +223,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "TextVAlign": "middle",
             "ActionType": "location-picker",
             "TextSize": "large",
-            "ActionBody": "EndLocation",
-            "Image": "https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/66-512.png"
+            "ActionBody": "EndLocation"
         },{
 			"Columns": 6,
 			"Rows": 1,
