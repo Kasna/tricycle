@@ -99,8 +99,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"Buttons": [{
 					"ActionBody": "ride",
 					"ActionType": "reply",
-					"BgMediaType": "picture",
-					"Text": "Ride",
+					"Text": "<font color='#FFFFFF'>Ride</font>",
 					"BgColor": "#000000",
 					"Rows": 1,
 					"Columns": 3
@@ -108,7 +107,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 					"ActionBody": "delivery",
 					"ActionType": "reply",
 					"BgColor": "#000000",
-					"Text": "Delivery",
+					"Text": "<font color='#FFFFFF'>Delivery</font>",
 					"Rows": 1,
 					"Columns": 3
 				}]
