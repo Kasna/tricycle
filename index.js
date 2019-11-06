@@ -160,7 +160,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "ActionType": "location-picker",
             "TextSize": "large",
             "ActionBody": "StartLocation",
-            "Image": "https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/66-512.png"
+            "Image": "https://www.freeiconspng.com/uploads/blue-location-icon-26.png"
         },{
 			"Columns": 6,
 			"Rows": 1,
