@@ -39,7 +39,7 @@ const RICHMEDIA_FRAME = {
 
 const minApiVersion = 7;
 
-const userprofile = []
+
 // Perfect! Now here's the key part:
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish ) => {
 	const uPF = userProfile.userProfile
@@ -85,6 +85,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     // Echo's back the message to the client. Your bot logic should sit here.
     console.log(message)
+    var uPF = response.userProfile
     if(message.text){
         var userInput = message.text
         var trackingData = message.trackingData
@@ -198,7 +199,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(rmbutton7)
         RICHMEDIA_FRAME.Buttons.push(rmbutton8)
         RICHMEDIA_FRAME.Buttons.push(rmbutton9)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(uPF,[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
@@ -236,7 +237,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons = []
         RICHMEDIA_FRAME.Buttons.push(plbutton)
         RICHMEDIA_FRAME.Buttons.push(plbutton2)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(uPF,[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
@@ -274,7 +275,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons = []
         RICHMEDIA_FRAME.Buttons.push(dlbutton)
         RICHMEDIA_FRAME.Buttons.push(dlbutton2)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(uPF,[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick End Location"])
 	}
@@ -354,7 +355,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(dibutton4)
         RICHMEDIA_FRAME.Buttons.push(dibutton5)
         RICHMEDIA_FRAME.Buttons.push(dibutton6)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(uPF,[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
@@ -464,7 +465,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons.push(disbutton7)
         RICHMEDIA_FRAME.Buttons.push(disbutton8)
         RICHMEDIA_FRAME.Buttons.push(disbutton9)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(uPF,[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
 	}
@@ -502,7 +503,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         RICHMEDIA_FRAME.Buttons = []
         RICHMEDIA_FRAME.Buttons.push(splbutton)
         RICHMEDIA_FRAME.Buttons.push(splbutton2)
-		bot.sendMessage(userprofile[0],[
+		bot.sendMessage(uPF,[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
 	}
