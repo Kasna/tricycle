@@ -35,25 +35,23 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 		{
 			"Columns": 3,
 			"Rows": 1,
-			"BgColor": "#000000",
-			"Text": "<font color='#ffffff'>Customer</font>",
+			"BgColor": "#e6f5ff",
+			"Text": "<font color='#000000'>Customer</font>",
 			"InputFieldState": "hidden",
 			"TextHAlign": "center",
 			"TextVAlign": "middle",
 			"ActionType": "reply",
-			"TextSize": "large",
 			"ActionBody": "Customer"
 		},
 		{
 			"Columns": 3,
 			"Rows": 1,
-			"BgColor": "#000000",
-			"Text": "<font color='#ffffff'>Tricycle Register</font>",
+			"BgColor": "#e6f5ff",
+			"Text": "<font color='#000000'>Tricycle Register</font>",
 			"InputFieldState": "hidden",
 			"TextHAlign": "center",
 			"TextVAlign": "middle",
 			"ActionType": "reply",
-			"TextSize": "large",
 			"ActionBody": "Driver"
 		}
 	]
@@ -125,7 +123,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "TextVAlign": "middle",
             "ActionType": "location-picker",
             "TextSize": "large",
-            "ActionBody": "destinationloca"
+            "ActionBody": "StartLocation"
         },{
 			"Columns": 6,
 			"Rows": 1,
@@ -138,42 +136,35 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			},"","","",minApiVersion))],["Pick current location"])
 	}
 	if (userInput == 'StartLocation') {
-		    let elbutton = {
-            "Columns": 6,
+		    
+		bot.sendMessage(uPF,[
+			new TextMessage("Pick Your start location"), 
+			(new KeyboardMessage({
+				"Type": "keyboard",
+				"InputFieldState": "hidden",
+		"Revision": 1,
+		"Buttons": [
+		{
+			"Columns": 6,
             "Rows": 1,
-            "BgColor": "#4b3695",
-            "Text": "<font color='#FFFFFF'>Destination Location</font>",
+            "BgColor": "#e6f5ff",
+            "Text": "<font color='#000000'>StartLocation</font>",
             "InputFieldState": "hidden",
             "TextHAlign": "center",
             "TextVAlign": "middle",
             "ActionType": "location-picker",
             "TextSize": "large",
-            "ActionBody": "destinationloca"
-        }
-        let dlbutton = {
-				"Columns":6,
-				"Rows":3,
-				"ActionType":"none",            
-				"Image":"https://www.google.com/search?q=start+location+logo&rlz=1C1GCEA_enMM862MM862&sxsrf=ACYBGNSvMaBqEX6MOMtojt_x477Dvz7WhQ:1568460766340&tbm=isch&source=iu&ictx=1&fir=ca3RBmz8Bc3ImM%253A%252CrZLSb--kJ9q2gM%252C_&vet=1&usg=AI4_-kRwvNEOlWJtVDq8yzKyRqpcplWkzg&sa=X&ved=2ahUKEwivncnWm9DkAhUTinAKHWkxAO0Q9QEwAHoECAkQBg#imgrc=ca3RBmz8Bc3ImM:"
-				}
-		let dlbutton2 = {
-				"Columns":6,
-				"Rows":2,
-				"ActionType":"none",
-				"BgColor": "#3771b0",
-				"Text":"<font color='#ffffff'>Pick Your destination location</font>",
-				"TextSize":"medium",
-				"TextVAlign":"middle",
-				"TextHAlign":"left"
-				}
-        KEYBOARD_FRAME.Buttons = []
-        KEYBOARD_FRAME.Buttons.push(elbutton)
-        RICHMEDIA_FRAME.Buttons = []
-        RICHMEDIA_FRAME.Buttons.push(dlbutton)
-        RICHMEDIA_FRAME.Buttons.push(dlbutton2)
-		bot.sendMessage(uPF,[
-			new RichMediaMessage(RICHMEDIA_FRAME), 
-			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick End Location"])
+            "ActionBody": "StartLocation"
+        },{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Home",
+			"Text": "<font color='#000000'>Home</font>"
+		}
+	]
+			},"","","",minApiVersion))],["Pick End Location"])
 	}
 		if (userInput == 'deliverpackage') {
 		    let dpbutton = {
