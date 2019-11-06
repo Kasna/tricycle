@@ -138,7 +138,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	if (userInput == 'StartLocation') {
 		    
 		bot.sendMessage(uPF,[
-			new TextMessage("Pick Your start location"), 
+			new TextMessage("Pick Your End location"), 
 			(new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
