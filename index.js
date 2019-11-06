@@ -122,23 +122,23 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	"Buttons": [
 		{
 			"Columns": 6,
-			"Rows": 1,
-			"BgColor": "#e6f5ff",
-			"ActionType": "reply",
-			"ActionBody": "Home",
-			"Text": "<font color='#000000'>Home</font>"
-		},{
-			"Columns": 6,
             "Rows": 1,
-            "BgColor": "#4b3695",
-            "Text": "<font color='#FFFFFF'>Destination Location</font>",
+            "BgColor": "#e6f5ff",
+            "Text": "<font color='#FFFFFF'>StartLocation</font>",
             "InputFieldState": "hidden",
             "TextHAlign": "center",
             "TextVAlign": "middle",
             "ActionType": "location-picker",
             "TextSize": "large",
             "ActionBody": "destinationloca"
-        }
+        },{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Home",
+			"Text": "<font color='#000000'>Home</font>"
+		}
 	]
 			},"","","",minApiVersion))],["Pick current location"])
 	}
