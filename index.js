@@ -75,8 +75,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     console.log("trackingData", trackingData)
     if(userInput == 'Customer'){
 		    bot.sendMessage(uPF,[
-			new TextMessage("Choose Service Type")
-			(new KeyboardMessage({
+			new TextMessage("Choose Service Type"),
+			new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
 	"Revision": 1,
@@ -104,7 +104,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>Home</font>"
 		}
 	]
-			},"","","",minApiVersion))],["Select service Type"])
+			},"","","",minApiVersion)],["Select service Type"])
 	}
 		if (userInput == 'ride') {
 		    
