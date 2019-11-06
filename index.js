@@ -107,7 +107,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion)],["Select service Type"])
 	}
-		if (userInput == 'ride') {
+		if (userInput == 'ride' || userInput == 'Cancel') {
 		    
 		bot.sendMessage(uPF,[
 			new TextMessage("Pick Your start location"), 
@@ -184,6 +184,39 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"ActionType": "reply",
 			"ActionBody": "Booking",
 			"Text": "<font color='#000000'>Booking</font>"
+        },{
+			"Columns": 3,
+			"Rows": 1,
+			"BgColor": "#ff0000",
+			"ActionType": "reply",
+			"ActionBody": "Cancel",
+			"Text": "<font color='#000000'>Cancel</font>"
+		},{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Home",
+			"Text": "<font color='#000000'>Home</font>"
+		}
+	]
+			},"","","",minApiVersion))],["Select server Type"])
+	}
+	if (userInput == 'Booking') {   
+		bot.sendMessage(uPF,[
+			new TextMessage("Cost is kkkk"), 
+			(new KeyboardMessage({
+				"Type": "keyboard",
+				"InputFieldState": "hidden",
+		"Revision": 1,
+		"Buttons": [
+		{
+			"Columns": 3,
+			"Rows": 1,
+			"BgColor": "#00ff00",
+			"ActionType": "reply",
+			"ActionBody": "Comfrim",
+			"Text": "<font color='#000000'>Comfrim</font>"
         },{
 			"Columns": 3,
 			"Rows": 1,
