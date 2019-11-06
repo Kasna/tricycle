@@ -75,26 +75,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     console.log("trackingData", trackingData)
     if(userInput == 'Customer'){
 		    bot.sendMessage(uPF,[
-			new RichMediaMessage({
-				"ButtonsGroupColumns": 3,
-				"ButtonsGroupRows": 1,
-				"BgColor": "#FFFFFF",
-				"Buttons": [{
-					"ActionBody": "ride",
-					"ActionType": "reply",
-					"Text": "<font color='#000000'>Ride</font>",
-					"BgColor": "#e6f5ff",
-					"Rows": 1,
-					"Columns": 3
-				}, {
-					"ActionBody": "delivery",
-					"ActionType": "reply",
-					"BgColor": "#e6f5ff",
-					"Text": "<font color='#000000'>Delivery</font>",
-					"Rows": 1,
-					"Columns": 3
-				}]
-			},"","","",minApiVersion), 
+			new TextMessage("Choose Service Type")
 			(new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
