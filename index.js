@@ -109,7 +109,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	}
 	if(userInput == 'Delivery'){
 		    bot.sendMessage(uPF,[
-			new TextMessage("Choose Service Type"),
+			new TextMessage("Choose items Type"),
 			new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
@@ -138,7 +138,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>Home</font>"
 		}
 	]
-			},"","","",minApiVersion)],["Select service Type"])
+			},"","","",minApiVersion)],["Select Delivery items Type"])
 	}
 		if (userInput == 'ride' || userInput == 'Cancel' || userInput == 'fragile' || userInput == 'hard') {
 		    
