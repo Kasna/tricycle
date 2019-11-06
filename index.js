@@ -160,6 +160,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             "ActionType": "location-picker",
             "TextSize": "large",
             "ActionBody": "StartLocation"
+            "Image": "https://images.app.goo.gl/yYnzLdESwPCuz9FQ9"
         },{
 			"Columns": 6,
 			"Rows": 1,
