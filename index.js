@@ -82,15 +82,15 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 				"Buttons": [{
 					"ActionBody": "ride",
 					"ActionType": "reply",
-					"Text": "<font color='#FFFFFF'>Ride</font>",
-					"BgColor": "#000000",
+					"Text": "<font color='#000000'>Ride</font>",
+					"BgColor": "#e6f5ff",
 					"Rows": 1,
 					"Columns": 3
 				}, {
 					"ActionBody": "delivery",
 					"ActionType": "reply",
-					"BgColor": "#000000",
-					"Text": "<font color='#FFFFFF'>Delivery</font>",
+					"BgColor": "#e6f5ff",
+					"Text": "<font color='#000000'>Delivery</font>",
 					"Rows": 1,
 					"Columns": 3
 				}]
@@ -106,7 +106,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "Home",
-			"Text": "<font color='#FFFFFF'>Home</font>"
+			"Text": "<font color='#000000'>Home</font>"
 		}
 	]
 			},"","","",minApiVersion))],["Select service Type"])
