@@ -107,7 +107,40 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion)],["Select service Type"])
 	}
-		if (userInput == 'ride' || userInput == 'Cancel') {
+	if(userInput == 'Delivery'){
+		    bot.sendMessage(uPF,[
+			new TextMessage("Choose Service Type"),
+			new KeyboardMessage({
+				"Type": "keyboard",
+				"InputFieldState": "hidden",
+	"Revision": 1,
+	"Buttons": [
+		{
+			"Columns": 3,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "fragile",
+			"Text": "<font color='#000000'>fragile</font>"
+		},{
+			"Columns": 3,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "hard",
+			"Text": "<font color='#000000'>Hard</font>"
+		},{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Home",
+			"Text": "<font color='#000000'>Home</font>"
+		}
+	]
+			},"","","",minApiVersion)],["Select service Type"])
+	}
+		if (userInput == 'ride' || userInput == 'Cancel' || userInput == 'fragile' || userInput == 'hard') {
 		    
 		bot.sendMessage(uPF,[
 			new TextMessage("Pick Your start location"), 
