@@ -301,6 +301,25 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion))],["show driver"])
 	}
+	if(userInput == 'Driver'){
+		    bot.sendMessage(uPF,[
+			new TextMessage("Create Account"),
+			new KeyboardMessage({
+				"Type": "keyboard",
+				"InputFieldState": "hidden",
+	"Revision": 1,
+	"Buttons": [
+		{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "share-phone",
+			"ActionBody": "phoneno",
+			"Text": "<font color='#000000'>Register</font>"
+		}
+	]
+			},"","","",minApiVersion)],["phoneno"])
+	}
 });
 
 
