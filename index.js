@@ -19,23 +19,6 @@ const bot = new ViberBot({
 	avatar: "https://www.google.com/imgres?imgurl=https://image.shutterstock.com/image-vector/pedicab-vector-icon-logo-260nw-502101706.jpg&imgrefurl=https://www.shutterstock.com/search/tricycle%2Blogo&tbnid=Ba49em_IAJdWiM&vet=1&docid=XwpyuXO0g4vcjM&w=368&h=280&q=tricycle+logo&hl=en-mm&source=sh/x/im" // It is recommended to be 720x720, and no more than 100kb.
 });
 
-const KEYBOARD_FRAME = {
-	"Type": "keyboard",
-	"InputFieldState": "hidden",
-	"DefaultHeight": false,
-	"BgColor": "#ffffff",
-	"Buttons": [
-		
-	]
-};
-const RICHMEDIA_FRAME = {
-	"ButtonsGroupColumns": 6,
-	"ButtonsGroupRows": 6,
-	"BgColor": "#000000",
-	"Buttons": [
-		
-	]
-};
 
 const minApiVersion = 7;
 
@@ -111,43 +94,25 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 					"Rows": 1,
 					"Columns": 3
 				}]
-			}), 
-			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Select server Type"])
+			},"","","",minApiVersion), 
+			(new KeyboardMessage({
+				"Type": "keyboard",
+				"InputFieldState": "hidden",
+	"Revision": 1,
+	"Buttons": [
+		{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Home",
+			"Text": "<font color='#FFFFFF'>Home</font>"
+		}
+	]
+			},"","","",minApiVersion))],["Select service Type"])
 	}
 		if (userInput == 'ride') {
-		    let slbutton = {
-            "Columns": 6,
-            "Rows": 1,
-            "BgColor": "#4b3695",
-            "Text": "<font color='#FFFFFF'>Start Location</font>",
-            "InputFieldState": "hidden",
-            "TextHAlign": "center",
-            "TextVAlign": "middle",
-            "ActionType": "location-picker",
-            "TextSize": "large",
-            "ActionBody": "StartLocation"
-        }
-        let plbutton = {
-				"Columns":6,
-				"Rows":3,
-				"ActionType":"none",            
-				"Image":"https://www.google.com/search?q=start+location+logo&rlz=1C1GCEA_enMM862MM862&sxsrf=ACYBGNSvMaBqEX6MOMtojt_x477Dvz7WhQ:1568460766340&tbm=isch&source=iu&ictx=1&fir=ca3RBmz8Bc3ImM%253A%252CrZLSb--kJ9q2gM%252C_&vet=1&usg=AI4_-kRwvNEOlWJtVDq8yzKyRqpcplWkzg&sa=X&ved=2ahUKEwivncnWm9DkAhUTinAKHWkxAO0Q9QEwAHoECAkQBg#imgrc=ca3RBmz8Bc3ImM:"
-				}
-		let plbutton2 = {
-				"Columns":6,
-				"Rows":2,
-				"ActionType":"none",
-				"BgColor": "#3771b0",
-				"Text":"<font color='#ffffff'>Pick Your current location</font>",
-				"TextSize":"medium",
-				"TextVAlign":"middle",
-				"TextHAlign":"left"
-				}
-        KEYBOARD_FRAME.Buttons = []
-        KEYBOARD_FRAME.Buttons.push(slbutton)
-        RICHMEDIA_FRAME.Buttons = []
-        RICHMEDIA_FRAME.Buttons.push(plbutton)
-        RICHMEDIA_FRAME.Buttons.push(plbutton2)
+		    
 		bot.sendMessage(uPF,[
 			new RichMediaMessage(RICHMEDIA_FRAME), 
 			(new KeyboardMessage(KEYBOARD_FRAME,"","","",minApiVersion))],["Pick current location"])
