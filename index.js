@@ -252,7 +252,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		    	slocation: {
 		    		latitude: lat,
 		    		longitude: lon
-		    	}
+		    	},
 		    	date: date
 		    });
 		bot.sendMessage(uPF,[
