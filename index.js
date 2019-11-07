@@ -82,7 +82,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     }
     console.log("userinput", userInput)
     console.log("trackingData", trackingData)
-    if(userInput == 'Customer' || userInput == 'Home' ){
+    if(userInput == 'Customer'){
 		    bot.sendMessage(uPF,[
 			new TextMessage("Choose Service Type"),
 			new KeyboardMessage({
@@ -236,7 +236,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		    let lat = trackingData.latitude ; let lon = trackingData.longitude;
 
 		    let data = {
-		    	lati : 
+		    	latitude: lat,
+		    	longitude: lon
 		    }
 
 		    let setDoc = db.collection('tricycle').doc('book1').set(data);
