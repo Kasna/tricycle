@@ -86,32 +86,12 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     }
     console.log("userinput", userInput)
     console.log("trackingData", trackingData)
-    if(userInput == 'Customer'){
-		    bot.sendMessage(uPF,[
-			new TextMessage("Choose Service Type"),
-			new KeyboardMessage({
-				"Type": "keyboard",
-				"InputFieldState": "hidden",
-	"Revision": 1,
-	"Buttons": [
-		{
-			"Columns": 6,
-			"Rows": 1,
-			"BgColor": "#e6f5ff",
-			"ActionType": "share-phone",
-			"ActionBody": "Customer Register",
-			"Text": "<font color='#000000'>Register</font>"
-		}
-	]
-			},"","","",minApiVersion)],["Customer Register"])
-	}
-    if(trackingData == '["Customer Register"]' || userInput == 'Home' ){
-    	if(trackingData == '["Customer Register"]'){
-    		db.collection('customer').doc(userInput).set({
+    if(userInput == 'customer' || userInput == 'Home' ){
+    	
+    		db.collection('customer').doc(uPF.id).set({
     			name: uPF.name,
-    			phone: userInput
+    			cus_id: uPF.id
     		})
-    	}
 		    bot.sendMessage(uPF,[
 			new TextMessage("Choose Service Type"),
 			new KeyboardMessage({
