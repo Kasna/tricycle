@@ -105,7 +105,13 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion)],["Customer Register"])
 	}
-    if(trackingData == 'Customer Register' || userInput == 'Home' ){
+    if(trackingData == '["Customer Register"]' || userInput == 'Home' ){
+    	if(trackingData == '["Customer Register"]'){
+    		db.collection('customer').doc(userInput).set({
+    			name: userProfile.name,
+    			phone: userInput
+    		})
+    	}
 		    bot.sendMessage(uPF,[
 			new TextMessage("Choose Service Type"),
 			new KeyboardMessage({
