@@ -264,7 +264,20 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion))],["EndLocation"])
 	}
-		if (trackingData == 'EndLocation' && userInput != 'Home') {   
+		if (trackingData == 'EndLocation' && userInput != 'Home') {  
+		console.log("lat, lan", trackingData)
+		    let lat = message.latitude ; let lon = message.longitude;
+
+		  	var date = new Date();
+
+		    db.collection('location').doc(`${uPF.id}`).set({
+		    	cus_id: uPF.id,
+		    	elocation: {
+		    		latitude: lat,
+		    		longitude: lon
+		    	},
+		    	date: date
+		    }); 
 		bot.sendMessage(uPF,[
 			new TextMessage("Cost is kkkk"), 
 			(new KeyboardMessage({
