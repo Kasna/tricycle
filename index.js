@@ -227,7 +227,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 
 		  	var date = new Date();
 
-		    db.collection('location').doc(`${uPF.id}`).set({
+		    db.collection('location').doc(booking).set({
+		    	cus_id: uPF.id,
 		    	slocation: {
 		    		latitude: lat,
 		    		longitude: lon
@@ -268,7 +269,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 
 		  	var date = new Date();
 
-		    db.collection('location').doc(`${uPF.id}`).set({
+		    db.collection('location').doc(booking).set({
+		    	cus_id: uPF.id,
 		    	elocation: {
 		    		latitude: lat,
 		    		longitude: lon
