@@ -228,12 +228,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		  	var date = new Date();
 
 		    db.collection('location').doc(`${uPF.id}`).set({
-		    	cus_id: uPF.id,
 		    	slocation: {
 		    		latitude: lat,
 		    		longitude: lon
 		    	},
-		    	date: date
 		    });
 		bot.sendMessage(uPF,[
 			new TextMessage("Pick Your End location"), 
@@ -271,13 +269,11 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		  	var date = new Date();
 
 		    db.collection('location').doc(`${uPF.id}`).set({
-		    	cus_id: uPF.id,
 		    	elocation: {
 		    		latitude: lat,
 		    		longitude: lon
-		    	},
-		    	date: date
-		    }); 
+		    	}
+		    },{merge: true}); 
 		bot.sendMessage(uPF,[
 			new TextMessage("Cost is kkkk"), 
 			(new KeyboardMessage({
