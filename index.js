@@ -81,7 +81,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     	var trackingData = message.trackingData[0]
     }
     if(message.contactPhoneNumber){
-    	var trackingData = message.keyboard[0]
+    	var trackingData = message.keyboard
     	var userInput = message.contactPhoneNumber
     }
     console.log("userinput", userInput)
