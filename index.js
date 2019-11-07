@@ -86,7 +86,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     }
     console.log("userinput", userInput)
     console.log("trackingData", trackingData)
-    if(userInput == 'customer' || userInput == 'Home' ){
+    if(userInput == 'Customer' || userInput == 'Home' ){
     	
     		db.collection('customer').doc(uPF.id).set({
     			name: uPF.name,
