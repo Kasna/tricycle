@@ -243,14 +243,18 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	}
 	if (trackingData == 'StartLocation' && userInput != 'Home') {
 		    console.log("lat, lan", trackingData)
-		    let lat = trackingData.latitude ; let lon = trackingData.longitude;
+		    let lat = message.latitude ; let lon = message.longitude;
 
-		    let data = {
-		    	latitude: lat,
-		    	longitude: lon
-		    }
+		  	var date = new Date();
 
-		    let setDoc = db.collection('tricycle').doc('book1').set(data);
+		    db.collection('location').doc(`${uPF.id}`).set({
+		    	cus_id: uPF.id,
+		    	slocation: {
+		    		latitude: lat,
+		    		longitude: lon
+		    	}
+		    	date: date
+		    });
 		bot.sendMessage(uPF,[
 			new TextMessage("Pick Your End location"), 
 			(new KeyboardMessage({
