@@ -108,7 +108,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     if(trackingData == '["Customer Register"]' || userInput == 'Home' ){
     	if(trackingData == '["Customer Register"]'){
     		db.collection('customer').doc(userInput).set({
-    			name: userProfile.name,
+    			name: uPF.name,
     			phone: userInput
     		})
     	}
