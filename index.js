@@ -225,11 +225,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		    console.log("lat, lan", trackingData)
 		    let lat = message.latitude ; let lon = message.longitude;
 
-		  	var d = new Date();
+		  	var sd = new Date();
 
-		    db.collection('location').doc(`${d}`).set({
+		    db.collection('location').doc(`${sd}`).set({
 		    	cus_id: uPF.id,
-		    	date: d,
 		    	slocation: {
 		    		latitude: lat,
 		    		longitude: lon
@@ -268,9 +267,9 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		console.log("lat, lan", trackingData)
 		    let lat = message.latitude ; let lon = message.longitude;
 
-		  	var date = new Date();
+		  	var ed = new Date();
 
-		    db.collection('location').doc(uPF.id).set({
+		    db.collection('location').doc(`${ed}`).set({
 		    	cus_id: uPF.id,
 		    	elocation: {
 		    		latitude: lat,
