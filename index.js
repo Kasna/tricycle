@@ -396,7 +396,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         "BorderWidth":"2",
 	        "BorderColor":"#da2828",
 	        "CornerRadius":"2"
-	    }
+	    },
 		"OpenURLType": "internal",
         "InternalBrowser.CustomTitle": "QR Scan",
         "InternalBrowser.Mode":"fullscreen",
