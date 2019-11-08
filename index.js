@@ -380,23 +380,19 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			},"","","",minApiVersion)],["confrim Booking"])
 	}
 	if (userInput == 'conbooking') {
-		
             "Columns":3,
             "Rows":1,
             "ActionType": "open-url",
             "ActionBody":`https://www.google.com/maps/search/?api=1&query=${lat},${lon}`,
-            "Frame":{
             "BorderWidth":"2",
             "BorderColor":"#da2828",
             "CornerRadius":"2"
 			"OpenURLType": "internal",
             "InternalBrowser.CustomTitle": "QR Scan",
             "InternalBrowser.Mode":"fullscreen",
-            "Map":}
             "Latitude": `${lat}`,
             "Longitude": `${lon}`
-          
-	}
+          }
 });
 
 
