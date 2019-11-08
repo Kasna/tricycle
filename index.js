@@ -360,7 +360,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion)],["phoneno"])
 	}
-	if (trackingData == 'phoneno') {
+	if (trackingData == '["phoneno"]') {
 		bot.sendMessage(uPF,[
 			new TextMessage("Create Account"),
 			new KeyboardMessage({
