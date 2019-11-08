@@ -225,7 +225,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		    console.log("lat, lan", trackingData)
 		    let lat = message.latitude ; let lon = message.longitude;
 
-		  	var d = new Date(year, month, day, hours, minutes, seconds);
+		  	var d = new Date();
 
 		    db.collection('location').doc(`${d}`).set({
 		    	cus_id: uPF.id,
