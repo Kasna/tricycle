@@ -377,6 +377,33 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>confrim</font>"
 		}
 	]
+			},"","","",minApiVersion)],["ph Register"])
+	}
+	if (userInput == 'conbooking') {
+		bot.sendMessage(uPF,[
+			new TextMessage("Create Account"),
+			new KeyboardMessage({
+				"Type": "keyboard",
+				"InputFieldState": "hidden",
+	"Revision": 1,
+	"Buttons": [
+		{
+        "Columns":3,
+        "Rows":1,
+        "ActionType": "open-url",
+        "ActionBody":`https://www.google.com/maps/search/?api=1&query=${lat},${lon}`,
+        "Frame":{
+        "BorderWidth":"2",
+        "BorderColor":"#da2828",
+        "CornerRadius":"2"
+		"OpenURLType": "internal",
+        "InternalBrowser.CustomTitle": "QR Scan",
+        "InternalBrowser.Mode":"fullscreen",
+        "Map":{
+        "Latitude": `${lat}`,
+        "Longitude": `${lon}`
+      }
+	]
 			},"","","",minApiVersion)],["confrim Booking"])
 	}
 });
