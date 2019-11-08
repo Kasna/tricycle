@@ -391,18 +391,20 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         "Columns":3,
         "Rows":1,
         "ActionType": "open-url",
-        "ActionBody":`https://www.google.com/maps/search/?api=1&query=${lat},${lon}`,
+        "ActionBody":`https://www.google.com/maps/search/?api=1&query=16.8392919,96.1559307`,
         "Frame":{
         "BorderWidth":"2",
-        "BorderColor":"#da2828",
-        "CornerRadius":"2"
+	        "BorderColor":"#da2828",
+	        "CornerRadius":"2"
+	    }
 		"OpenURLType": "internal",
         "InternalBrowser.CustomTitle": "QR Scan",
         "InternalBrowser.Mode":"fullscreen",
         "Map":{
-        "Latitude": `${lat}`,
-        "Longitude": `${lon}`
-      }
+        	"Latitude": '16.8392919',
+        	"Longitude": '96.1559307'
+     	 }
+     	}
 	]
 			},"","","",minApiVersion)],["confrim Booking"])
 	}
