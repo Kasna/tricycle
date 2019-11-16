@@ -30,7 +30,7 @@ var db=admin.firestore();
 
 const minApiVersion = 7;
 
-
+const map = `https://www.google.com/maps/dir/''/@16.8269322,96.1261905,13z/data=!4m14!4m13!1m5!1m1!1s0x30c1eb7f9ea970ff:0x4191798945cea04d!2m2!1d96.1503727!2d16.7746789!1m5!1m1!1s0x30c194eb8085c3f9:0x6bddcf017bdfdd7!2m2!1d96.1286525!2d16.8503986!3e2`
 // Perfect! Now here's the key part:
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish ) => {
 	const uPF = userProfile.userProfile
@@ -361,8 +361,11 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			},"","","",minApiVersion)],["phoneno"])
 	}
 	if (trackingData == '["phoneno"]') {
+
+		
+		
 		bot.sendMessage(uPF,[
-			new TextMessage("Create Account"),
+			new TextMessage("Created Account"),
 			new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
@@ -391,7 +394,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         "Columns":3,
         "Rows":1,
         "ActionType": "open-url",
-        "ActionBody":`https://www.google.com/maps/search/?api=1&query=16.8392919,96.1559307`,
+        "ActionBody": map,
         "Frame":{
         "BorderWidth":"2",
 	        "BorderColor":"#da2828",
