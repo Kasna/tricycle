@@ -395,18 +395,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         "Rows":1,
         "ActionType": "open-url",
         "ActionBody": map,
-        "Frame":{
-        "BorderWidth":"2",
-	        "BorderColor":"#da2828",
-	        "CornerRadius":"2"
-	    },
-		"OpenURLType": "internal",
-        "InternalBrowser.CustomTitle": "QR Scan",
-        "InternalBrowser.Mode":"fullscreen",
-        "Map":{
-        	"Latitude": '16.8392919',
-        	"Longitude": '96.1559307'
-     	 }
      	}
 	]
 			},"","","",minApiVersion)],["confrim Booking"])
