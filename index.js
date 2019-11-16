@@ -394,7 +394,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 
 				result.forEach(each=>{
 					
-					const map = `https://www.google.com/maps/dir/Latha+St,+Yangon,+Myanmar+(Burma)/''/@16.7769605,96.1501579,13z/data=!4m14!4m13!1m5!1m1!1s0x30c1eb7f9ea970ff:0x4191798945cea04d!2m2!1d96.1543205!2d16.7790825!3e2`
+					const map = `https://www.google.com/maps/dir/Latha+St,+Yangon,+Myanmar+(Burma)/''/@16.7769605,96.1501579,13z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x30c1eb7f9ea970ff:0x4191798945cea04d!2m2!1d96.1503727!2d16.7746789!1m5!1m1!1s0x30c1ec821e07a833:0xdde741e3cd511209!2m2!1d96.1543205!2d16.7790825!3e2`
 
 					bot.sendMessage(uPF,[
 						new TextMessage("Create Account"),
