@@ -282,6 +282,9 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		  	var rate = 1.04
 		  	var cost = distancem*rate
 		  	var wholecost = Math.ceil(cost)
+		  	var trcost = wholecost/100
+		  	var rtcost = Math.ceil(wholecost)
+		  	var finalcost = rtcost*100
 		  	var ed = new Date();
 
 		    db.collection('location').doc(`${uPF.id}`).set({
@@ -293,7 +296,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		    	edate:`${ed}`
 		    },{merge: true}); 
 		bot.sendMessage(uPF,[
-			new TextMessage(`The cost is ${wholecost} MMK`), 
+			new TextMessage(`The cost is ${finalcost} MMK`), 
 			(new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
