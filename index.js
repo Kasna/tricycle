@@ -262,12 +262,20 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>Home</font>"
 		}
 	]
-			},"","","",minApiVersion))],["EndLocation"])
+			},"","","",minApiVersion))],["EndLocation",{lat: lat, lon: lon}])
 	}
 		if (trackingData == 'EndLocation' && userInput != 'Home') {  
 		console.log("lat, lan", trackingData)
 		    let lat = message.latitude ; let lon = message.longitude;
-
+		    var latdiff = Math.abs(lat-trackingData[1].lat)
+		  	var londiff = Math.abs(lon-trackingData[1].lon)
+		  	var latsquare = latdiff*latdiff
+		  	var lonsquare = londiff*londiff
+		  	var distancesquare = latsquare+lonsquare
+		  	var distance = Math.sqrt(distancesquare)
+		  	var distancekm = distance*111
+		  	var rate = 1.1
+		  	var cost = distancekm*rate
 		  	var ed = new Date();
 
 		    db.collection('location').doc(`${uPF.id}`).set({
@@ -279,7 +287,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		    	edate:`${ed}`
 		    },{merge: true}); 
 		bot.sendMessage(uPF,[
-			new TextMessage("Cost is kkkk"), 
+			new TextMessage(`The cost is ${cost}`), 
 			(new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
@@ -393,7 +401,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			else{
 
 				result.forEach(each=>{
-					${each.data().slocation.latitude}!2d${each.data().slocation.longitude}
 					const map = `https://www.google.com/maps/dir/Latha+St,+Yangon,+Myanmar+(Burma)/''/@16.7769605,96.1501579,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x30c1eb7f9ea970ff:0x4191798945cea04d!2m2!1d${each.data().slocation.latitude}!2d${each.data().slocation.longitude}!1m5!1m1!1s0x30c1ec821e07a833:0xdde741e3cd511209!2m2!1d96.1543205!2d16.7790825!3e2`
 
 					bot.sendMessage(uPF,[
