@@ -278,9 +278,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		  	var lonsquare = londiff*londiff
 		  	var distancesquare = latsquare+lonsquare
 		  	var distance = Math.sqrt(distancesquare)
-		  	var distancekm = distance*111
+		  	var distancem = distance*111000
 		  	var rate = 1.1
-		  	var cost = distancekm*rate
+		  	var cost = distancem*rate
+		  	var wholecost = Math.ceil(cost)
 		  	var ed = new Date();
 
 		    db.collection('location').doc(`${uPF.id}`).set({
@@ -292,7 +293,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		    	edate:`${ed}`
 		    },{merge: true}); 
 		bot.sendMessage(uPF,[
-			new TextMessage(`The cost is ${cost}`), 
+			new TextMessage(`The cost is ${wholecost} MMK`), 
 			(new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
