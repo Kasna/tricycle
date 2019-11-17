@@ -266,12 +266,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	}
 		if (trackingData == 'EndLocation' && userInput != 'Home') {  
 		console.log("lat, lan", trackingData)
-		    let lat = parseFloat(message.latitude) ; 
+		    let lat = parseFloat(message.latitude); 
 		    let lon = parseFloat(message.longitude);
-		    console.log(lat, lon)
 		    var slat = parseFloat(message.trackingData[1].lat)
 		    var slon = parseFloat(message.trackingData[1].lon)
-		  	console.log(slat,slon)
 		  	var latdiff = Math.abs(slat-lat)
 		  	var londiff = Math.abs(slon-lon)
 		  	var latsquare = latdiff*latdiff
@@ -283,7 +281,9 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		  	var cost = distancem*rate
 		  	var wholecost = Math.ceil(cost)
 		  	var trcost = wholecost/100
-		  	var rtcost = Math.ceil(wholecost)
+		  	console.log(trcost)
+		  	var rtcost = Math.ceil(trcost)
+		  	console.log(rtcost)
 		  	var finalcost = rtcost*100
 		  	var ed = new Date();
 
