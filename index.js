@@ -266,9 +266,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	}
 		if (trackingData == 'EndLocation' && userInput != 'Home') {  
 		console.log("lat, lan", trackingData)
-		    let lat = message.latitude ; let lon = message.longitude;
-		    var latdiff = Math.abs(lat-trackingData[1].lat)
-		  	var londiff = Math.abs(lon-trackingData[1].lon)
+		    let lat = parseInt(message.latitude) ; let lon = parseInt(message.longitude);
+		    var latdiff = Math.abs(lat-parseInt(trackingData[1].lat))
+		  	var londiff = Math.abs(lon-parseInt(trackingData[1].lon))
+		  	console.log(latdiff, londiff)
 		  	var latsquare = latdiff*latdiff
 		  	var lonsquare = londiff*londiff
 		  	var distancesquare = latsquare+lonsquare
