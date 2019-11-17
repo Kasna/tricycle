@@ -157,6 +157,39 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion)],["Select service Type"])
 	}
+	if(userInput == 'ride'){
+		    bot.sendMessage(uPF,[
+			new TextMessage("Choose Number of customer"),
+			new KeyboardMessage({
+				"Type": "keyboard",
+				"InputFieldState": "hidden",
+	"Revision": 1,
+	"Buttons": [
+		{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "One",
+			"Text": "<font color='#000000'>One</font>"
+		},{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Two",
+			"Text": "<font color='#000000'>Two</font>"
+		},{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Three",
+			"Text": "<font color='#000000'>Three</font>"
+		}
+	]
+			},"","","",minApiVersion)],["Number of customer"])
+	}
 	if(userInput == 'Delivery'){
 		    bot.sendMessage(uPF,[
 			new TextMessage("Choose items Type"),
@@ -190,7 +223,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion)],["Select Delivery items Type"])
 	}
-		if (userInput == 'ride' || userInput == 'Cancel' || userInput == 'fragile' || userInput == 'hard') {
+		if (userInput == 'One' || userInput == 'Cancel' || userInput == 'fragile' || userInput == 'hard') {
 		    
 		bot.sendMessage(uPF,[
 			new TextMessage("Pick Your start location"), 
@@ -226,15 +259,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		    let lat = message.latitude ; let lon = message.longitude;
 
 		  	var sd = new Date();
-
-		    db.collection('location').doc(`${uPF.id}`).set({
-		    	cus_id: uPF.id,
-		    	slocation: {
-		    		latitude: lat,
-		    		longitude: lon
-		    	},
-		    	sdate:`${sd}`
-		    });
 		bot.sendMessage(uPF,[
 			new TextMessage("Pick Your End location"), 
 			(new KeyboardMessage({
