@@ -426,9 +426,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			},"","","",minApiVersion)],["ph Register"])
 	}
 	if (userInput == 'Booking') {
-
-		var slat = parseFloat(message.trackingData[1].lat)
-		var slon = parseFloat(message.trackingData[1].lon)
+		let lat = parseFloat(message.latitude); 
+		let lon = parseFloat(message.longitude);
+		var slat = parseFloat(message.trackingData[1])
+		var slon = parseFloat(message.trackingData[1])
 
 		db.collection('location').where("cus_id","==",`${uPF.id}`).get().then(result=>{
 			if(result.empty){
