@@ -440,7 +440,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			else{
 
 				result.forEach(each=>{
-					const map = `https://www.google.com/maps/dir/?api=1&origin=${slat},${slon}&destination=34.059808,-118.368152`
+					const map = `https://www.google.com/maps/dir/?api=1&origin=${slat},${slon}&destination=${elat},${elon}`
 
 					bot.sendMessage(uPF,[
 						new TextMessage("Create Account"),
