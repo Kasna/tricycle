@@ -349,7 +349,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>Home</font>"
 		}
 	]
-			},"","","",minApiVersion))],[`{lat:${slat}, lon:${slon}},{lat:${lat}, lon: ${lon} }` ] )
+			},"","","",minApiVersion))],[`{lat:${slat}, lon:${slon}, elat:${lat}, elon: ${lon} }` ] )
 	}
 	if (userInput == '') {   
 		bot.sendMessage(uPF,[
@@ -430,8 +430,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		// let lon = parseFloat(message.longitude);
 		var slat = parseFloat(message.trackingData[0].lat)
 		var slon = parseFloat(message.trackingData[0].lon)
-		var elat = parseFloat(message.trackingData[1].lat)
-		var elon = parseFloat(message.trackingData[1].lon)
+		var elat = parseFloat(message.trackingData[0].elat)
+		var elon = parseFloat(message.trackingData[0].elon)
 
 		db.collection('location').where("cus_id","==",`${uPF.id}`).get().then(result=>{
 			if(result.empty){
