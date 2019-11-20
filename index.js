@@ -349,7 +349,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>Home</font>"
 		}
 	]
-			},"","","",minApiVersion))],[`lat:${slat}, lon:${slon}, elat:${lat}, elon: ${lon} ` ] )
+			},"","","",minApiVersion))],[`slat:${lat}, slon:${lon}, elat:${elat}, elon: ${elon}` ] )
 	}
 	if (userInput == '') {   
 		bot.sendMessage(uPF,[
