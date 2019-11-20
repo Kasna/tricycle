@@ -426,6 +426,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			},"","","",minApiVersion)],["ph Register"])
 	}
 	if (userInput == 'Booking') {
+		let lat = parseFloat(message.latitude); 
+		let lon = parseFloat(message.longitude);
+		var slat = parseFloat(message.trackingData[1].lat)
+		var slon = parseFloat(message.trackingData[1].lon)
 
 		db.collection('location').where("cus_id","==",`${uPF.id}`).get().then(result=>{
 			if(result.empty){
@@ -434,7 +438,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			else{
 
 				result.forEach(each=>{
-					const map = `https://www.google.com/maps/dir/Junction+City,+Bo+Gyoke+Road,+Yangon/Latha+St,+Yangon,+Myanmar+(Burma)/@16.7770307,96.1501579,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x30c1ec821e07a833:0xdde741e3cd511209!2m2!1d96.1543205!2d16.7790825!1m5!1m1!1s0x30c1eb7f9ea970ff:0x4191798945cea04d!2m2!1d96.1503727!2d16.7746789!3e0`
+					const map = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lon}&destination=34.059808,-118.368152`
 
 					bot.sendMessage(uPF,[
 						new TextMessage("Create Account"),
