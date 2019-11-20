@@ -351,7 +351,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion))],["show cost"])
 	}
-	if (userInput == 'Booking') {   
+	if (userInput == '') {   
 		bot.sendMessage(uPF,[
 			new TextMessage("Driver is kkkk"), 
 			(new KeyboardMessage({
@@ -425,7 +425,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	]
 			},"","","",minApiVersion)],["ph Register"])
 	}
-	if (userInput == 'conbooking') {
+	if (userInput == 'Booking') {
 
 		db.collection('location').where("cus_id","==",`${uPF.id}`).get().then(result=>{
 			if(result.empty){
@@ -434,7 +434,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			else{
 
 				result.forEach(each=>{
-					const map = `https://www.google.com/maps/dir/Latha+St,+Yangon,+Myanmar+(Burma)/''/@16.7769605,96.1501579,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x30c1eb7f9ea970ff:0x4191798945cea04d!2m2!1d${each.data().slocation.latitude}!2d${each.data().slocation.longitude}!1m5!1m1!1s0x30c1ec821e07a833:0xdde741e3cd511209!2m2!1d96.1543205!2d16.7790825!3e2`
+					const map = `https://www.google.com/maps/dir/Junction+City,+Bo+Gyoke+Road,+Yangon/Latha+St,+Yangon,+Myanmar+(Burma)/@16.7770307,96.1501579,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x30c1ec821e07a833:0xdde741e3cd511209!2m2!1d96.1543205!2d16.7790825!1m5!1m1!1s0x30c1eb7f9ea970ff:0x4191798945cea04d!2m2!1d96.1503727!2d16.7746789!3e0`
 
 					bot.sendMessage(uPF,[
 						new TextMessage("Create Account"),
@@ -444,7 +444,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 							"Revision": 1,
 							"Buttons": [
 								{
-						        "Columns":3,
+						        "Columns":6,
 						        "Rows":1,
 						        "ActionType": "open-url",
 						        "ActionBody": map,
