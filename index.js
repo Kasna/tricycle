@@ -349,7 +349,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>Home</font>"
 		}
 	]
-			},"","","",minApiVersion))],["show cost"])
+			},"","","",minApiVersion))],[`{lat:${slat}, lon:${slon}},{lat:${lat}, lon: ${lon} }` ] )
 	}
 	if (userInput == '') {   
 		bot.sendMessage(uPF,[
@@ -426,12 +426,12 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			},"","","",minApiVersion)],["ph Register"])
 	}
 	if (userInput == 'Booking') {
-		let lat = parseFloat(message.latitude); 
-		let lon = parseFloat(message.longitude);
-		var slat = parseFloat(message.trackingData[1])
-		var slon = parseFloat(message.trackingData[1])
-		var elat = parseFloat(message.trackingData[1])
-		var elon = parseFloat(message.trackingData[1])
+		// let lat = parseFloat(message.latitude); 
+		// let lon = parseFloat(message.longitude);
+		var slat = parseFloat(message.trackingData[0].lat)
+		var slon = parseFloat(message.trackingData[0].lon)
+		var elat = parseFloat(message.trackingData[1].lat)
+		var elon = parseFloat(message.trackingData[1].lon)
 
 		db.collection('location').where("cus_id","==",`${uPF.id}`).get().then(result=>{
 			if(result.empty){
