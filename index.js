@@ -426,8 +426,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			},"","","",minApiVersion)],["ph Register"])
 	}
 	if (userInput == 'Booking') {
-		// let lat = parseFloat(message.latitude); 
-		// let lon = parseFloat(message.longitude);
+		let lat = parseFloat(message.latitude); 
+		let lon = parseFloat(message.longitude);
 		var slat = parseFloat(message.trackingData[0].lat)
 		var slon = parseFloat(message.trackingData[0].lon)
 		var elat = parseFloat(message.trackingData[1].lat)
