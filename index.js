@@ -430,6 +430,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		let lon = parseFloat(message.longitude);
 		var slat = parseFloat(message.trackingData[1])
 		var slon = parseFloat(message.trackingData[1])
+		var elat = parseFloat(message.trackingData[0])
+		var elon = parseFloat(message.trackingData[0])
 
 		db.collection('location').where("cus_id","==",`${uPF.id}`).get().then(result=>{
 			if(result.empty){
