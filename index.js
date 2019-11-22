@@ -34,7 +34,7 @@ const map = `https://www.google.com/maps/dir/''/@16.8269322,96.1261905,13z/data=
 // Perfect! Now here's the key part:
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish ) => {
 	const uPF = userProfile.userProfile
-	bot.sendMessage(uPF,new TextMessage('Hello '+uPF.name+'! Welcome to Tricycle Service!',{
+	bot.sendMessage(uPF,new TextMessage('မင်္ဂလာပါ'+uPF.name+'ဆိုက်ကျဲဒိုးမှကြိုဆိုပါတယ်!',{
 	"Type": "keyboard",
 	"InputFieldState": "hidden",
 	"DefaultHeight": false,
@@ -44,7 +44,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 			"Columns": 3,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
-			"Text": "<font color='#000000'>Customer</font>",
+			"Text": "<font color='#000000'>အသုံးပြုသူ</font>",
 			"InputFieldState": "hidden",
 			"TextHAlign": "center",
 			"TextVAlign": "middle",
@@ -55,7 +55,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 			"Columns": 3,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
-			"Text": "<font color='#000000'>Tricycle Register</font>",
+			"Text": "<font color='#000000'>ဆိုက်ကားဆရာ</font>",
 			"InputFieldState": "hidden",
 			"TextHAlign": "center",
 			"TextVAlign": "middle",
@@ -93,7 +93,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     			cus_id: uPF.id
     		})
 		    bot.sendMessage(uPF,[
-			new TextMessage("Choose Service Type"),
+			new TextMessage("ဝန်ဆောင်မှုအမျိုးအစားရွေးပါ"),
 			new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
@@ -105,21 +105,14 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "ride",
-			"Text": "<font color='#000000'>Ride</font>"
+			"Text": "<font color='#000000'>စီးမည်</font>"
 		},{
 			"Columns": 6,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "Delivery",
-			"Text": "<font color='#000000'>Delivery</font>"
-		},{
-			"Columns": 6,
-			"Rows": 1,
-			"BgColor": "#e6f5ff",
-			"ActionType": "reply",
-			"ActionBody": "Home",
-			"Text": "<font color='#000000'>Home</font>"
+			"Text": "<font color='#000000'>ကုန်ပစ္စည်းပို့မည်</font>"
 		}
 	]
 			},"","","",minApiVersion)],["Select service Type"])
@@ -159,7 +152,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	}
 	if(userInput == 'ride'){
 		    bot.sendMessage(uPF,[
-			new TextMessage("Choose Number of customer"),
+			new TextMessage("စီးမည့်လူအရေအတွက်ကိုရွေးပါ"),
 			new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
@@ -171,28 +164,35 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "One",
-			"Text": "<font color='#000000'>One</font>"
+			"Text": "<font color='#000000'>တစ်ယောက်</font>"
 		},{
 			"Columns": 6,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "Two",
-			"Text": "<font color='#000000'>Two</font>"
+			"Text": "<font color='#000000'>နှစ်ယောက်</font>"
 		},{
 			"Columns": 6,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "Three",
-			"Text": "<font color='#000000'>Three</font>"
+			"Text": "<font color='#000000'>သုံးယောက်</font>"
+		},{
+			"Columns": 6,
+			"Rows": 1,
+			"BgColor": "#e6f5ff",
+			"ActionType": "reply",
+			"ActionBody": "Home",
+			"Text": "<font color='#000000'>မူလနေရာသို့</font>"
 		}
 	]
 			},"","","",minApiVersion)],["Number of customer"])
 	}
 	if(userInput == 'Delivery'){
 		    bot.sendMessage(uPF,[
-			new TextMessage("Choose items Type"),
+			new TextMessage("သင့်ကုန်ပစ္စည်းအမျိုးအစားကိုရွေးပါ"),
 			new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
@@ -204,21 +204,21 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "fragile",
-			"Text": "<font color='#000000'>fragile</font>"
+			"Text": "<font color='#000000'>ကွဲတတ်သည်</font>"
 		},{
 			"Columns": 3,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "hard",
-			"Text": "<font color='#000000'>Hard</font>"
+			"Text": "<font color='#000000'>မကွဲတတ်ပါ</font>"
 		},{
 			"Columns": 6,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "Home",
-			"Text": "<font color='#000000'>Home</font>"
+			"Text": "<font color='#000000'>မူလနေရာသို့</font>"
 		}
 	]
 			},"","","",minApiVersion)],["Select Delivery items Type"])
@@ -226,7 +226,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		if (userInput == 'One' || userInput == 'Cancel' || userInput == 'fragile' || userInput == 'hard') {
 		    
 		bot.sendMessage(uPF,[
-			new TextMessage("Pick Your start location"), 
+			new TextMessage("သင့်တည်နေရာကိုရွေး၍ save ဆိုသောစာတန်းလေးအားနှိပ်ပေးပါ"), 
 			(new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
@@ -236,7 +236,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Columns": 6,
             "Rows": 1,
             "BgColor": "#e6f5ff",
-            "Text": "<font color='#000000'>StartLocation</font>",
+            "Text": "<font color='#000000'>တည်နေရာ</font>",
             "InputFieldState": "hidden",
             "TextHAlign": "center",
             "TextVAlign": "middle",
@@ -249,7 +249,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "Home",
-			"Text": "<font color='#000000'>Home</font>"
+			"Text": "<font color='#000000'>မူလနေရာသို့</font>"
 		}
 	]
 			},"","","",minApiVersion))],["StartLocation"])
@@ -260,7 +260,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 
 		  	var sd = new Date();
 		bot.sendMessage(uPF,[
-			new TextMessage("Pick Your End location"), 
+			new TextMessage("သင့်သွားလိုသောနေရာကိုရွေး၍ save ဆိုသောစာတန်းလေးအားနှိပ်ပေးပါ"), 
 			(new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
@@ -270,7 +270,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Columns": 6,
             "Rows": 1,
             "BgColor": "#e6f5ff",
-            "Text": "<font color='#000000'>EndLocation</font>",
+            "Text": "<font color='#000000'>သွားမည်နေရာ</font>",
             "InputFieldState": "hidden",
             "TextHAlign": "center",
             "TextVAlign": "middle",
@@ -283,10 +283,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "Home",
-			"Text": "<font color='#000000'>Home</font>"
+			"Text": "<font color='#000000'>မူလနေရာသို့</font>"
 		}
 	]
-			},"","","",minApiVersion))],["EndLocation",{lat: lat, lon: lon}])
+			},"","","",minApiVersion))],["EndLocation"])
 	}
 		if (trackingData == 'EndLocation' && userInput != 'Home') {  
 		console.log("lat, lan", trackingData)
@@ -320,7 +320,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 		    	edate:`${ed}`
 		    },{merge: true}); 
 		bot.sendMessage(uPF,[
-			new TextMessage(`The cost is ${finalcost} MMK`), 
+			new TextMessage(`ကုန်ကျစရိတ်မှာ ${finalcost}ကျပ် ဖြစ်ပါသည်`), 
 			(new KeyboardMessage({
 				"Type": "keyboard",
 				"InputFieldState": "hidden",
@@ -332,21 +332,21 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"BgColor": "#99ffbb",
 			"ActionType": "reply",
 			"ActionBody": "Booking",
-			"Text": "<font color='#000000'>Booking</font>"
+			"Text": "<font color='#000000'>ငှါးမည်</font>"
         },{
 			"Columns": 3,
 			"Rows": 1,
 			"BgColor": "#ff9999",
 			"ActionType": "reply",
 			"ActionBody": "Cancel",
-			"Text": "<font color='#000000'>Cancel</font>"
+			"Text": "<font color='#000000'>မငှါးပါ</font>"
 		},{
 			"Columns": 6,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
 			"ActionType": "reply",
 			"ActionBody": "Home",
-			"Text": "<font color='#000000'>Home</font>"
+			"Text": "<font color='#000000'>မူလနေရာသို့</font>"
 		}
 	]
 			},"","","",minApiVersion))],[`{lat:${slat}, lon:${slon}, elat:${lat}, elon: ${lon}} ` ] )
@@ -428,10 +428,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	if (userInput == 'Booking') {
 		// let lat = parseFloat(message.latitude); 
 		// let lon = parseFloat(message.longitude);
-		var slat = parseFloat(message.trackingData.lat)
-		var slon = parseFloat(message.trackingData.lon)
-		var elat = parseFloat(message.trackingData.elat)
-		var elon = parseFloat(message.trackingData.elon)
+		var slat = parseFloat(message.trackingData[0].lat)
+		var slon = parseFloat(message.trackingData[0].lon)
+		var elat = parseFloat(message.trackingData[0].elat)
+		var elon = parseFloat(message.trackingData[0].elon)
 
 		db.collection('location').where("cus_id","==",`${uPF.id}`).get().then(result=>{
 			if(result.empty){
