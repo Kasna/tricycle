@@ -428,8 +428,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	if (userInput == 'Booking') {
 		// let lat = parseFloat(message.latitude); 
 		// let lon = parseFloat(message.longitude);
-		var slat = message.trackingData[0].lat
-		var slon = message.trackingData[0].lon
+		var lat = message.trackingData[0].lat
+		var lon = message.trackingData[0].lon
 		var elat = message.trackingData[0].elat
 		var elon = message.trackingData[0].elon
 
@@ -440,7 +440,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			else{
 
 				result.forEach(each=>{
-					const map = `https://www.google.com/maps/dir/?api=1&origin=${slat},${slon}&destination=${elat},${elon}`
+					const map = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lon}&destination=${elat},${elon}`
 
 					bot.sendMessage(uPF,[
 						new TextMessage("Create Account"),
