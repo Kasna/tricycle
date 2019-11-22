@@ -286,7 +286,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			"Text": "<font color='#000000'>မူလနေရာသို့</font>"
 		}
 	]
-			},"","","",minApiVersion))],["EndLocation"])
+			},"","","",minApiVersion))],["EndLocation",{lat: lat, lon: lon}])
 	}
 		if (trackingData == 'EndLocation' && userInput != 'Home') {  
 		console.log("lat, lan", trackingData)
