@@ -428,10 +428,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 	if (userInput == 'Booking') {
 		// let lat = parseFloat(message.latitude); 
 		// let lon = parseFloat(message.longitude);
-		var lat = message.trackingData[0].lat
-		var lon = message.trackingData[0].lon
-		var elat = message.trackingData[0].elat
-		var elon = message.trackingData[0].elon
+		var lat = parseFloat(message.trackingData[0].lat)
+		var lon = parseFloat(message.trackingData[0].lon)
+		var elat = parseFloat(message.trackingData[0].elat)
+		var elon = parseFloat(message.trackingData[0].elon);
 
 		db.collection('location').where("cus_id","==",`${uPF.id}`).get().then(result=>{
 			if(result.empty){
