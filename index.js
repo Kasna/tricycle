@@ -426,12 +426,10 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			},"","","",minApiVersion)],["ph Register"])
 	}
 	if (userInput == 'Booking') {
-		// let lat = parseFloat(message.latitude); 
-		// let lon = parseFloat(message.longitude);
-		var lat = message.trackingData[0].lat.toString()
-		var lon = message.trackingData[0].lon.toString()
-		var elat = message.trackingData[0].elat.toString()
-		var elon = message.trackingData[0].elon.toString()
+		var lat = parseFloat(message.trackingData[0].lat)
+		var lon = parseFloat(message.trackingData[0].lon)
+		var elat = parseFloat(message.trackingData[0].elat)
+		var elon = parseFloat(message.trackingData[0].elon)
 
 		db.collection('location').where("cus_id","==",`${uPF.id}`).get().then(result=>{
 			if(result.empty){
@@ -440,7 +438,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 			else{
 
 				result.forEach(each=>{
-					const map = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lon}&destination=${elat},${elon}`
+					const map = "https://www.google.com/maps/dir/?api=1&origin="+lat+","+lon+"&destination="+elat+","+elon;
 
 					bot.sendMessage(uPF,[
 						new TextMessage("Create Account"),
