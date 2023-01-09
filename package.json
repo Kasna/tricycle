@@ -20,7 +20,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "firebase": "^7.2.3",
-    "firebase-admin": "^8.7.0",
+    "firebase-admin": "^11.4.1",
     "requestify": "^0.2.5",
     "viber-bot": "^1.0.14"
   }
